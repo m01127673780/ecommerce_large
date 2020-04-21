@@ -63,6 +63,8 @@ return [
     'admin_email'                  => 'بريد المشرف',
     'created_at'                   => 'أنشيء فى',
     'updated_at'                   => 'محدث فى',
+    'name_ar'                      => '     الاسم  با العربيه   ',
+    'name_en'                      => '      الاسم  بالانجليزية   ',
     'ask_delete_item'              => 'هل انت موافق على حذف السجلات التالية وهي عددها ',
     'ask_delete_dep'               => '  هل تريد حذف قسم : ',
     'please_check_some_records'    => 'من فضلك قم باختيار بعض السجلات للحذف',
@@ -128,9 +130,9 @@ return [
     'create_countreis'            => ' اضافه دوله ',
     'country_name_ar'     => ' اسم الدولة عربى ',
     'country_name_en'     => ' اسم الدولة انجليزى ',
-    'mob'     => ' اختار / رمز الدولة ',
-    'mob_show'     => ' رمز الدولة ',
-    'code'     => ' كود الدولة ',
+    'mob'     => '   الموبايل   ',
+    'mob_show'     => ' الموبايل ',
+    'code'     => ' الكود ',
     'logo_countreis'     => ' اختارعلم / شعار الدوله ',
     'custom_logo_countreis'     => 'شعار الدوله ',
     'create_new_countreis'     => ' اضافه دوله جديده  ',
@@ -249,9 +251,21 @@ return [
     'dpe_8'            =>'منتجات مميزة القسم  الثانى 2	 ',
 
 
+//    ------------------------start part  2
 
 
 
+
+    // start trademarks
+    'trademarks'            =>' 	العلامات التجارية ',
+    'logo_trademarks'            =>' 	 الرمز',
+     'page_create_trademarks'     => 'صفحه اضافه دوله',
+    'create_trademarks'            => ' اضافه دوله ',
+
+    'mob'     => '  الموب ',
+//     'logo_trademarks'     => ' اختارعلم / شعار الدوله ',
+    'logo'     => 'الشعار ',
+    'create_new_trademarks'     => ' اضافه  علامه ت جديده  ',
 
 
 

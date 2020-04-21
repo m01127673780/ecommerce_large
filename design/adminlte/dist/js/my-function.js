@@ -62,6 +62,14 @@ $(document).on('click','.btn_crete_new_row_countreis',function ()
     $(".modal_massage .message_error").fadeIn();
 });
 // End page countreis------------
+// start page trademarks----------
+$(document).on('click','.btn_crete_new_row_trademarks',function ()
+{
+     $('#createNewTrademarks').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page Trademarks------------
 
 // start page departments----------
 $(document).on('click','.btn_crete_new_row_departments',function ()

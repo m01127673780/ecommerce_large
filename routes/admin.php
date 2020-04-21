@@ -45,6 +45,12 @@
                   Route::post('products/create_quick', 'ProductsController@quick_store');
 
 
+                  // start Trademarks Route
+                  Route::delete('trademarks/destroy/all', 'TrademarksController@multi_delete');
+                  Route::resource('trademarks', 'TrademarksController');
+                  Route::post('trademarks/create_quick', 'TrademarksController@quick_store');
+
+
 
 
                   // start setting Route

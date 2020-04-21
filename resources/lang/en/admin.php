@@ -1,6 +1,6 @@
-<?php
+    <?php
 
-return [
+    return [
 
 
     'login'                                  => 'LOGIN',
@@ -59,8 +59,8 @@ return [
     'sSortAscending'               => 'Sort Ascending',
     //....................................... data datatables
     'copyright'            => ' Copyright © 2010 .All Rights Reserved To     ',
-    
-            'edit'                         => 'Edit',
+
+    'edit'                         => 'Edit',
     'edit_page'                    => '   Edit Page ',
     'add'                          => 'Add',
     'delete'                       => 'Delete',
@@ -70,7 +70,7 @@ return [
     'created_at'                   => '   Created at',
     'updated_at'                   => '   Updated at',
     'ask_delete_item'              => ' Do you agree to delete the following records, which are their number? ',
-    
+
     'ask_delete_dep'               => ' Do you want to delete a  department? : ',
     'please_check_some_records'    => ' Please Check Some Records ',
     'All'    => 'All',
@@ -79,23 +79,23 @@ return [
     'no'                           => 'NO',
     'close'                        => 'Close',
     'success_settings'             => ' Settings were successfully updated',
-     'page_settings'             => ' Settings page',
- 
-     'name'                         => 'Name',
+    'page_settings'             => ' Settings page',
+
+    'name'                         => 'Name',
     'email'                        => ' Email  ',
     'password'                     => ' password  ',
     'record_added'                 => '  The record was added successfully',
- 
+
     'save'                         => ' save ',
     'change_password'               => ' The password has been changed successfully ',
- 
+
     'updated_record'               => ' The data was successfully updated ',
- 
+
     'deleted_record'               => ' The data was deleted successfully',
-  
+
     'page-create-admin'            => '  Page Create  Admin',
     'delete_this'                 => ' Do you agree to delete?:' . ' :name '.' ؟ ',
-  
+
     'delete_fast'                  => ' delete fast *   ',
     'users'                        => ' users',
     'users'                        => ' users',
@@ -109,20 +109,20 @@ return [
     'corporation'                  => 'Corporation',
     'store'                         => 'Corporation',
     'user'                         => 'user',
-     'level'                        => ' Membership level ',
+    'level'                        => ' Membership level ',
     'description'                  => ' description  ',
     'keywords'                     => ' Keywords',
     'status'                       => 'Status',
     'open'                         => 'Open',
     'settings'                     => 'Settings',
-    
+
     'sitename_ar'                  => ' Site Name ar    ',
     'sitename_en'                  => ' Site Name en   ',
-     'logo'                         => '  Logo  ',
+    'logo'                         => '  Logo  ',
     'icon'                         => ' Icon  ',
     'custom_logo'                         => ' Choose logo site  ',
     'custom_icon'                         => ' Choose icon site  ',
- 
+
 
     'Messenger_of_Allah_Mohamad'  =>' the messenger muhammad pause upnhm  ',
     'website_main'            =>' Website',
@@ -134,32 +134,32 @@ return [
 
 
     'adminacount'                   => ' Admin accounts',
- 
+
     // start countreis
     'countreis'                 => ' Countreis',
     'page_create_countreis'     => '   Page Create Countreis',
     'create_countreis'            => '  Create Countreis   ',
     'country_name_ar'     => '    Country Name ar ',
     'country_name_en'     => '    Country Name en ',
-     'mob'     => ' Choose / ZIP code',
-  
+    'mob'     => ' Choose / ZIP code',
+
     'mob_show'     => '   ZIP code   ',
     'code'     => ' Country code ',
- 
+
     'logo_countreis'     => ' Choose the country flag / emblem ',
     'custom_logo_countreis'     => ' Country Logo ',
- 
+
     'create_new_countreis'     => '  Create New Countreis      ',
 
     // start departments
     'departments'                  => 'Departments',
     'department '                  => ' Department',
-     'dep_name_ar'                  => ' Department Ar    ',
-     'dep_name_en'                  => ' Department EN    ',
+    'dep_name_ar'                  => ' Department Ar    ',
+    'dep_name_en'                  => ' Department EN    ',
     'parent'                       => 'Sub from',
-     'description'                  => 'description',
-     'icon_departments'     => '  Photo  Departments   ',
-     'create_new_departments'     => '  Create New Departments   ',
+    'description'                  => 'description',
+    'icon_departments'     => '  Photo  Departments   ',
+    'create_new_departments'     => '  Create New Departments   ',
     'page_create_departments'     => 'Page Create Departments    ',
     // start departments
     'add_product_in_th_dep'     => '    Add Product  Here    ',
@@ -176,38 +176,38 @@ return [
     'add_by_photo_products'             => ' add by photo      ',
     'add_by_ar'             => '       Add by ar    ',
     'add_by_en'             => '       Add by en    ',
-     'discount'             => '  discount  ',
+    'discount'             => '  discount  ',
     'create_new_product'     => '  Create New Product  ',
     'create_new_products'     => '  Create New Product  ',
-     'page_create_product'     => 'Page Create Product    ',
+    'page_create_product'     => 'Page Create Product    ',
     'price'                  => ' Price ',
     'price_old'                  => '  Price Old    ',
     'description_ar'                  => '   Description ar       ',
     'description_en'                  => '   Description en       ',
- 
+
     // start departments
     'add_product_in_th_dep'     => '    Add Product In Department ',
 
 
 
 
-            
-            
-            
-            
-            
-            
-            // --------------------------------------------
-            
-            
-            
-            
-            
+
+
+
+
+
+
+    // --------------------------------------------
+
+
+
+
+
 
     // start slider
 
     'link'     => '  Link address',
-   
+
     'photo_slider'     => '       Photo Slider  ',
     'create_new_sliders'     => '   Create New Sliders   ',
     'create_create'     => '  new addition    ',
@@ -215,7 +215,7 @@ return [
     'create_sliders'     => ' Create Sliders      ',
     'page_create_sliders'     => '  Page Create Sliders    ',
 
-    // start title 
+    // start title
     'the_most'             => '  Most        ',
     'wanted'             => '  wanted      ',
     'Latest'             => ' Latest      ',
@@ -243,7 +243,7 @@ return [
     'refresh'            => 'Refresh this page ',
     'show_all_products'            => '      Show all products only * ',
 
-//-----------------in local host
+    //-----------------in local host
 
     'add_poroduct_in_this_dep'            => ' Add a new product here   ',
     'add_poroduct'            => '  Add a new product  in  pep   ',
@@ -258,14 +258,15 @@ return [
     'dpe_1'            => '  The latest products  first section 1 ',
     'dpe_2'            => 'The latest products  TWO section 2',
     'dpe_3'            => 'The latest products  three section 3',
- 
+
     'dpe_6'            => '  Best Seller  ',
     'dpe_5'            =>'   Special Offers   ',
     'dpe_7'            =>' Featured Products first section 1 	 ',
     'dpe_8'            =>' Featured Products Two section 2	 ',
- 
+//    ------------------------start part  2
+
+        'trademarks'            =>' 	Trademarks ',
 
 
 
- 
-];
+    ];
