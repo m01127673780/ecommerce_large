@@ -79,6 +79,7 @@ $(document).on('click','.btn_crete_new_row_manufacts',function ()
 });
 // End page manufacts------------
 
+
 // start page departments----------
 $(document).on('click','.btn_crete_new_row_departments',function ()
 {
@@ -97,6 +98,14 @@ $(document).on('click','.btn_crete_new_row_products',function ()
 });
 // End page products------------
 
+// start page shipping----------
+$(document).on('click','.btn_crete_new_row_shipping',function ()
+{
+    $('#createNewshipping').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page shipping------------
 
 // $(document).on('click','.btn_edit_row',function ()
 // {

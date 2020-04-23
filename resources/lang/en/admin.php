@@ -293,4 +293,15 @@
         'lng'                     =>'Lng',
         'address'                     =>'Address',
 
+        // start shipping
+
+        'shipping'            =>' Shipping ',
+        'logo_shipping'            =>' 	 logo Shipping',
+        'page_create_shipping'     => 'Page create Shipping',
+        'create_trademarks'            => ' Create Shipping ',
+        'create_new_shipping'     => ' Create New Shipping ',
+        'contact_name'     => 'Administrator',
+        'owner'     => 'Owner',
+
+
     ];

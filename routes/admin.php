@@ -56,6 +56,12 @@
                   Route::post('manufacts/create_quick', 'ManufactsController@quick_store');
 
 
+                  // start Shipping Route
+                  Route::delete('shipping/destroy/all', 'ShippingController@multi_delete');
+                  Route::resource('shipping', 'ShippingController');
+                  Route::post('shipping/create_quick', 'ShippingController@quick_store');
+
+
 
 
                   // start setting Route

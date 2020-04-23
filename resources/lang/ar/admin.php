@@ -268,8 +268,8 @@ return [
 
     // start manufacts
     'manufacts'            =>' 	 المصنعين',
-    'logo_manufacts'            =>' 	 الرمز',
-    'page_create_manufacts'     => 'صفحه اضافه دوله',
+    'logo_manufacts'            =>' 	رمز  الشركه',
+    'page_create_manufacts'     => 'صفحه اضافه مصنع ',
     'create_manufacts'            => ' اضافه دوله ',
     'mob'                           => '  الموب ',
     'contact_name'     => 'المسؤول عن المصنع ',
@@ -281,5 +281,15 @@ return [
     'lat'                     =>'',
     'lng'                     =>'',
     'address'                     =>'العنوان',
+
+    // start shipping
+
+    'shipping'            =>' شركات الشحن ',
+    'logo_shipping'            =>' 	  رمز  الشركه ',
+    'page_create_shipping'     => ' صفحه اضافه شركه ش',
+    'create_trademarks'            => ' اضافه شركه شحن ',
+    'create_new_shipping'     => 'اضافه   شركه ش جديده',
+    'owner'     => 'المالك',
+
 ];
 
