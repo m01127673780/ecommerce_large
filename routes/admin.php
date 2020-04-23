@@ -50,6 +50,11 @@
                   Route::resource('trademarks', 'TrademarksController');
                   Route::post('trademarks/create_quick', 'TrademarksController@quick_store');
 
+                  // start Manufacts Route
+                  Route::delete('manufacts/destroy/all', 'ManufactsController@multi_delete');
+                  Route::resource('manufacts', 'ManufactsController');
+                  Route::post('manufacts/create_quick', 'ManufactsController@quick_store');
+
 
 
 

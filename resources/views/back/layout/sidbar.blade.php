@@ -242,7 +242,6 @@
                </ul>
             </li>
             <!--End  countreis---------->
-
             <li class="nav-item admin has-treeview {{active_menu('trademarks')[0]}}">
                <a href="#" class="nav-link">
                   <i class="fa fa-flagcube nav-icon"></i><p>{{trans('admin.trademarks')}}<i class="fas fa-angle-left right"></i></p>
@@ -257,7 +256,7 @@
                         <i class="fa fa-cube nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_trademarks')}}</p>
                      </button>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item">   
                      <button   class="nav-link btn btn-success btn-create-new-row     ">
                         <a href="{{aurl('trademarks/create')}}"  class="">
                            <i class="fa fa-cube nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_trademarks')}}</p>
@@ -267,6 +266,31 @@
                </ul>
             </li>
             <!--End  trademarks---------->
+
+            <li class="nav-item admin has-treeview {{active_menu('manufacts')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fa fa-user-cog nav-icon"></i><p>{{trans('admin.manufacts')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('manufacts')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('manufacts')}}" class="nav-link">
+                        <i class="fa fa-user-cog nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.manufacts')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                        <i class="fa fa-user-cog nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_manufacts')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">   
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('manufacts/create')}}"  class="">
+                           <i class="fa fa-user-cog nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_manufacts')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  manufacts---------->
 
 
 

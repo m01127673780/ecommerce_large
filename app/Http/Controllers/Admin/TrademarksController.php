@@ -62,7 +62,7 @@ class TrademarksController extends Controller
             'name_en'         =>'required',
             'mob'                     =>'sometimes|nullable',
             'code'                    =>'sometimes|nullable',
-            'logo'                  =>v_image(),
+            'logo'                    =>'sometimes|nullable|'.v_image(),
 
          ],[
             'name_ar'         =>trans('admin.name_ar'),
@@ -93,7 +93,7 @@ class TrademarksController extends Controller
             'name_en'         =>'required',
             'mob'                     =>'sometimes|nullable',
             'code'                    =>'sometimes|nullable',
-            'logo'                    =>v_image(),
+            'logo'                    =>'sometimes|nullable|'.v_image(),
 
          ],[
             'name_ar'         =>trans('admin.name_ar'),

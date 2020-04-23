@@ -261,13 +261,25 @@ return [
     'logo_trademarks'            =>' 	 الرمز',
      'page_create_trademarks'     => 'صفحه اضافه دوله',
     'create_trademarks'            => ' اضافه دوله ',
-
-    'mob'     => '  الموب ',
+    'mob'                           => '  الموب ',
 //     'logo_trademarks'     => ' اختارعلم / شعار الدوله ',
     'logo'     => 'الشعار ',
     'create_new_trademarks'     => ' اضافه  علامه ت جديده  ',
 
-
-
+    // start manufacts
+    'manufacts'            =>' 	 المصنعين',
+    'logo_manufacts'            =>' 	 الرمز',
+    'page_create_manufacts'     => 'صفحه اضافه دوله',
+    'create_manufacts'            => ' اضافه دوله ',
+    'mob'                           => '  الموب ',
+    'contact_name'     => 'المسؤول عن المصنع ',
+    'create_new_manufacts'     => ' اضافه   مصنع جديده  ',
+    'facebook'=>'فيسبوك',
+    'twitter'=>'تواتر',
+    'website'=>'المواقع الرسمى ',
+    'insta'=>'انستقرام',
+    'lat'                     =>'',
+    'lng'                     =>'',
+    'address'                     =>'العنوان',
 ];
 

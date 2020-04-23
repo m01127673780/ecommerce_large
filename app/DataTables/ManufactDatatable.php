@@ -1,9 +1,9 @@
 <?php
 namespace App\DataTables;
-use App\Model\Trademark;
+use App\Model\Manufact;
 use Yajra\DataTables\Services\DataTable;
 
-class TrademarkDatatable extends DataTable
+class ManufactDatatable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -14,11 +14,11 @@ class TrademarkDatatable extends DataTable
 
     public function dataTable($query) {
         return datatables($query)
-            ->addColumn('checkbox', 'back.trademarks.btn.checkbox')
-            ->addColumn('edit', 'back.trademarks.btn.edit')
-            ->addColumn('delete', 'back.trademarks.btn.delete')
-            ->addColumn('show', 'back.trademarks.btn.show')
-            ->addColumn('image', 'back.trademarks.btn.image')
+            ->addColumn('checkbox', 'back.manufacts.btn.checkbox')
+            ->addColumn('edit', 'back.manufacts.btn.edit')
+            ->addColumn('delete', 'back.manufacts.btn.delete')
+            ->addColumn('show', 'back.manufacts.btn.show')
+            ->addColumn('image', 'back.manufacts.btn.image')
             ->rawColumns([
                 'checkbox',
                 'edit',
@@ -36,7 +36,7 @@ class TrademarkDatatable extends DataTable
      */
     public function query()
     {
-        return Trademark::query();
+        return Manufact::query();
         //return $model->newQuery()->select('id', 'add-your-columns-here', 'created_at', 'updated_at');
     }
 
@@ -58,8 +58,8 @@ class TrademarkDatatable extends DataTable
                 'buttons'=>[
                     [ 'text'=>' <i class="fa fa-trash"></i> ','className'=>'btn btn-danger delBtn'],
 
-                    ['text' => '</i><i class="fa fa-plus"></i> ' .trans('admin.create_new_trademarks').'<i class="fa fa-cube"> ', 'className' => 'btn 
-                    btn_crete_new_row_trademarks btn-info'],
+                    ['text' => '</i><i class="fa fa-plus"></i> ' .trans('admin.create_new_manufacts').'<i class="fa fa-cube"> ', 'className' => 'btn 
+                    btn_crete_new_row_manufacts btn-info'],
 
 
 							
@@ -103,17 +103,17 @@ class TrademarkDatatable extends DataTable
                 'data'  => 'name_'.session('lang'),
                 'title' => trans('admin.name_'.session('lang')),
             ], [
-                'name'  => 'code',
-                'data'  => 'code',
-                 'title' => trans('admin.code'),
+                'name'  => 'contact_name',
+                'data'  => 'contact_name',
+                 'title' => trans('admin.contact_name'),
             ],[
                 'name'  => 'mob',
                 'data'  => 'mob',
-                 'title' => trans('admin.mob_show'),
+                 'title' => trans('admin.mob'),
             ],[
                 'name'  => 'image',
                 'data'  => 'image',
-                 'title' => trans('admin.logo_trademarks'),
+                 'title' => trans('admin.logo_manufacts'),
                 'exportable' => false,
                 'printable'  => false,
                 'orderable'  => false,
@@ -162,6 +162,6 @@ class TrademarkDatatable extends DataTable
      */
     protected function filename()
     {
-        return 'Trademark_' . date('YmdHis');
+        return 'Manufact_' . date('YmdHis');
     }
 }

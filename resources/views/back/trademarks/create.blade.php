@@ -18,6 +18,7 @@
                                 <!-- /.----------------------------------------------------------------- -->
                                 <div class="box-body">
                                     {!! Form::open(['url'=>aurl('trademarks'),'files'=>true]) !!}
+
                                     <div class="form-group">
                                         {!! Form::label('name_ar',trans('admin.name_ar')) !!}
                                         {!! Form::text('name_ar',old('name_ar'),['class'=>'form-control','class'=>'form-control' ]) !!}
@@ -39,9 +40,9 @@
                                             {!! Form::file('logo',['class'=>'custom-file-input','id'=>'inputGroupFile02'] ) !!}
                                         </div>
                                     </div>
-                                    <div> 
+                                    <div>
                                     <img   src="{{url('')}}/default/flag.gif" class="img_100px"></div>
- 
+
 
                                 <!----------------End logo-->
                                     {{ Form::button('<i class="fa fa-location-arrow ">'

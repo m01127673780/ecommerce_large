@@ -70,6 +70,14 @@ $(document).on('click','.btn_crete_new_row_trademarks',function ()
     $(".modal_massage .message_error").fadeIn();
 });
 // End page Trademarks------------
+// start page manufacts----------
+$(document).on('click','.btn_crete_new_row_manufacts',function ()
+{
+     $('#createNewmanufacts').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page manufacts------------
 
 // start page departments----------
 $(document).on('click','.btn_crete_new_row_departments',function ()

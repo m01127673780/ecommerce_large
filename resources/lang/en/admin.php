@@ -265,8 +265,32 @@
     'dpe_8'            =>' Featured Products Two section 2	 ',
 //    ------------------------start part  2
 
-        'trademarks'            =>' 	Trademarks ',
 
 
+        // start trademarks
+            'trademarks'            =>' Trademarks ',
+            'logo_trademarks'            =>' 	 logo trademark',
+            'page_create_trademarks'     => 'Page create trademarks',
+            'create_trademarks'            => ' Create Trademark ',
+            'mob'                           => '  mob ',
+            'logo'     => 'Logo ',
+            'create_new_trademarks'     => ' Create New Trademarks ',
+
+        // start manufacts
+
+        'trademarks'            =>' Manufacts ',
+        'logo_trademarks'            =>' 	 logo Manufact',
+        'page_create_trademarks'     => 'Page create Manufacts',
+        'create_trademarks'            => ' Create Manufact ',
+        'mob'                           => '  mob ',
+        'logo'     => 'Logo ',
+        'create_new_trademarks'     => ' Create New Manufacts ',
+        'contact_name'     => 'Administrator',
+        'facebook'                =>'Facebook',
+        'twitter'                 =>'Twitter',
+        'website'                 =>'Website',
+        'lat'                     =>'Lat',
+        'lng'                     =>'Lng',
+        'address'                     =>'Address',
 
     ];
