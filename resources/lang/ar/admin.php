@@ -296,7 +296,7 @@ return [
     'logo_mall'            =>' 	  رمز  المول ',
     'page_create_mall'     => ' صفحه اضافه مول  ',
     'create_mall'          => ' اضافه مول ',
-    'create_new_mall'      => 'اضافه   مول جديده',
+    'create_new_mall'      => 'اضافه   مول جديد',
     'country_id'      => '  الدوله ',
     'you_did_not_locate'      => '    لم تقوم بتحديد مكان   على الخريطه       ',
     // start color
@@ -304,7 +304,14 @@ return [
     'logo_color'            =>' 	  رمز  الون ',
     'page_create_color'     => ' صفحه اضافه الالون  ',
     'create_color'          => ' اضافه لون ',
-    'create_new_color'      => 'اضافه   لون جديده',
+    'create_new_color'      => 'اضافه   لون جديد',
+ // start weight
+    'weight'                 =>' المقاسات   ',
+    'weights'                 =>' المقاسات   ',
+    'icon_weight'            =>' 	  رمز  المقاس ',
+    'page_create_weight'     => ' صفحه اضافه مقاس  ',
+    'create_weight'          => ' اضافه مقاس ',
+    'create_new_weight'      => 'اضافه   مقاس جديد',
 
 ];
 

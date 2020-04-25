@@ -364,6 +364,30 @@
                   </li>
                </ul>
             </li>
+            <!--End  color---------->
+   <li class="nav-item admin has-treeview {{active_menu('weights')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-paint-brush nav-icon"></i><p>{{trans('admin.weights')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('weights')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('weights')}}" class="nav-link">
+                        <i class="fas fa-paint-brush nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.weight')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_weight')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('weights/create')}}"  class="">
+                           <i class="fas fa-building nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_weight')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
             <!--End  mall---------->
 
 

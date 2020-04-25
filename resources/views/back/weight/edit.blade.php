@@ -17,7 +17,7 @@
                             <div class="card-body form_dark">
                                 <!-- /.----------------------------------------------------------------- -->
                                 <div class="box-body">
-                                    {!! Form::open(['url'=>aurl('color/'.$color->id),'method'=>'put','files'=>true]) !!}
+                                    {!! Form::open(['url'=>aurl('weights/'.$weight->id),'method'=>'put','files'=>true]) !!}
                                     {{ Form::button('<i class="fa fa-location-arrow ">'
                                     . trans('admin.save').'
                                     </i> <i class="fa fa-flag-usa"> </i> ' ,
@@ -31,17 +31,17 @@
                                                 <div class="col-md-6 content_form_ar" >
                                                     <div class="form-group">
                                                         {!! Form::label('name_ar',trans('admin.name_ar')) !!}
-                                                        {!! Form::text('name_ar',$color->name_ar,['class'=>'form-control']) !!}
+                                                        {!! Form::text('name_ar',$weight->name_ar,['class'=>'form-control']) !!}
                                                     </div><!-- /.form-group name_ar -->
                                                      <div class="form-group">
                                                         {!! Form::label('color',trans('admin.color')) !!}
-                                                        {!! Form::color('color',$color->color,['class'=>'form-control']) !!}
+                                                        {!! Form::color('color',$weight->color,['class'=>'form-control']) !!}
                                                     </div><!-- /.form-group color -->
                                                 </div><!--col-md-6 content_form_ar-->
                                                 <div class="col-md-6 content_form_en" >
                                                     <div class="form-group">
                                                         {!! Form::label('name_en',trans('admin.name_en')) !!}
-                                                        {!! Form::text('name_en',$color->name_en,['class'=>'form-control']) !!}
+                                                        {!! Form::text('name_en',$weight->name_en,['class'=>'form-control']) !!}
                                                     </div><!-- /.form-group name_en -->
                                                     <!----------------start  icon-->
                                                     <div class="input-group  icon_colo">
@@ -50,10 +50,10 @@
                                                             {!! Form::file('icon',['class'=>'custom-file-input','id'=>'inputGroupFile02'] ) !!}
                                                         </div>
                                                     </div>
-                                                    @if(!empty($color->icon))
-                                                        <div> <img src="{{url('public/storage').Storage::url($color->icon)}}" class="img_100px "></div>
+                                                    @if(!empty($weight->icon))
+                                                        <div> <img src="{{url('public/storage').Storage::url($weight->icon)}}" class="img_100px "></div>
                                                     @else
-                                                        <img src="{{url('')}}/default/color.png" class="img_120px">
+                                                        <img src="{{url('')}}/default/weight.png" class="img_120px">
                                                 @endif
                                                 <!----------------End icon-->
                                                 </div><!--col-md-6 content_form_en-->

@@ -327,6 +327,14 @@
         'create_color'            => ' Create Color ',
         'create_new_color'     => ' Create  New Color',
 
+        // start weight
+        'weight'            =>' Weights ',
+        'weights'            =>' Weights ',
+        'logo_weight'            =>' 	Icon  Weight ',
+        'page_create_weight'     => ' Page Create Weight ',
+        'create_weight'            => ' Create Weight ',
+        'create_new_weight'     => ' Create  New Weight',
+
 
 
 

@@ -73,6 +73,11 @@
                   Route::resource('color', 'ColorController');
                   Route::post('color/create_quick', 'ColorController@quick_store');
 
+                 // start Shipping weight
+                  Route::delete('weights/destroy/all', 'WeightController@multi_delete');
+                  Route::resource('weights', 'WeightController');
+                  Route::post('weights/create_quick', 'WeightController@quick_store');
+
 
 
 
