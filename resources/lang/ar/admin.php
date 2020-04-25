@@ -299,6 +299,12 @@ return [
     'create_new_mall'      => 'اضافه   مول جديده',
     'country_id'      => '  الدوله ',
     'you_did_not_locate'      => '    لم تقوم بتحديد مكان   على الخريطه       ',
+    // start color
+    'color'                 =>'الالون   ',
+    'logo_color'            =>' 	  رمز  الون ',
+    'page_create_color'     => ' صفحه اضافه الالون  ',
+    'create_color'          => ' اضافه لون ',
+    'create_new_color'      => 'اضافه   لون جديده',
 
 ];
 

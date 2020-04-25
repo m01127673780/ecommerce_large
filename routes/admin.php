@@ -68,6 +68,12 @@
                   Route::post('mall/create_quick', 'MallController@quick_store');
 
 
+                 // start Shipping Route
+                  Route::delete('color/destroy/all', 'ColorController@multi_delete');
+                  Route::resource('color', 'ColorController');
+                  Route::post('color/create_quick', 'ColorController@quick_store');
+
+
 
 
                   // start setting Route

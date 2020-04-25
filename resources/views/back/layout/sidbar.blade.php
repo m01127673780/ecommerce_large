@@ -316,7 +316,6 @@
                </ul>
             </li>
             <!--End  shipping---------->
-
             <li class="nav-item admin has-treeview {{active_menu('mall')[0]}}">
                <a href="#" class="nav-link">
                   <i class="fas fa-building nav-icon"></i><p>{{trans('admin.mall')}}<i class="fas fa-angle-left right"></i></p>
@@ -335,6 +334,31 @@
                      <button   class="nav-link btn btn-success btn-create-new-row     ">
                         <a href="{{aurl('mall/create')}}"  class="">
                            <i class="fas fa-building nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_mall')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  mall---------->
+
+   <li class="nav-item admin has-treeview {{active_menu('color')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-paint-brush nav-icon"></i><p>{{trans('admin.color')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('color')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('color')}}" class="nav-link">
+                        <i class="fas fa-paint-brush nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.color')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_color')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('color/create')}}"  class="">
+                           <i class="fas fa-building nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_color')}}</p>
                         </a>
                      </button>
                   </li>

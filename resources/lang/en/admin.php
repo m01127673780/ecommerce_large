@@ -320,6 +320,14 @@
         'you_did_not_locate'      => "  You didn't find a place on the map    ",
 
 
+        // start Color
+        'color'            =>' Color ',
+        'logo_color'            =>' 	Logo Color ',
+        'page_create_color'     => ' Page Create Color ',
+        'create_color'            => ' Create Color ',
+        'create_new_color'     => ' Create  New Color',
+
+
 
 
     ];

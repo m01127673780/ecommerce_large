@@ -27,6 +27,7 @@ $(document).on('click','.btn_crete_new_row_frontends',function ()
     $(".modal_massage .message_error").fadeIn();
 
 });
+
 // start page sliders------------
 $(document).on('click','.btn_crete_new_row_sliders',function ()
 {
@@ -78,6 +79,14 @@ $(document).on('click','.btn_crete_new_row_manufacts',function ()
     $(".modal_massage .message_error").fadeIn();
 });
 // End page manufacts------------
+// start page color----------
+$(document).on('click','.btn_crete_new_row_color',function ()
+{
+     $('#createNewcolor').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page color------------
 
 
 // start page departments----------
