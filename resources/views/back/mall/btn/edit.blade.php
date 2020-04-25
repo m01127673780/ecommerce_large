@@ -1,10 +1,10 @@
-{{--<a href="{{ aurl('shipping/'.$id.'/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i></a>--}}
+{{--<a href="{{ aurl('mall/'.$id.'/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i></a>--}}
 
 
  <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_shipping{{ $id }}"><i class="fa fa-edit"></i></button>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_mall{{ $id }}"><i class="fa fa-edit"></i></button>
 <!-- Modal -->
-<div id="edit_shipping{{ $id }}" class="modal fade" role="dialog">
+<div id="edit_mall{{ $id }}" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <!-- Modal content-->
         <div class="modal-content">
@@ -14,7 +14,7 @@
             </div>
             <div class="modal-body">
                 <!-- /.----------------------------------------------------------------- -->
-                 {!! Form::open(['route'=>['shipping.update',$id],'method'=>'put','class'=>'form_save_in_modal','files'=>true]) !!}
+                 {!! Form::open(['route'=>['mall.update',$id],'method'=>'put','class'=>'form_save_in_modal','files'=>true]) !!}
                   <section class="all_fildes_modal_edit">
                              <!--start inputs  ---------------------------------------------- -->
                             <div class="box-body">
@@ -32,7 +32,7 @@
                                             {!! Form::label('facebook',trans('admin.facebook')) !!}
                                             {!! Form::email('facebook',$facebook,['class'=>'form-control']) !!}
                                         </div><!-- /.form-group facebook -->
-
+                                         
                                         <div class="form-group">
                                             {!! Form::label('insta',trans('admin.insta')) !!}
                                             {!! Form::email('insta',$insta,['class'=>'form-control']) !!}
@@ -40,14 +40,14 @@
                                             <!----------------start  logo-->
                                                 <div class="input-group ">
                                                     <div class="custom-file">
-                                                        {!! Form::label('logo',trans('admin.logo'),['class'=>'custom-file-label']) !!}
+                                                        {!! Form::label('logo_mall',trans('admin.logo_mall'),['class'=>'custom-file-label']) !!}
                                                         {!! Form::file('logo',['class'=>'custom-file-input','id'=>'inputGroupFile02'] ) !!}
                                                     </div>
                                                 </div>
                                                 @if(!empty($logo))
                                                     <div> <img src="{{url('public/storage').Storage::url($logo)}}" class="img_100px "></div>
                                                  @else
-                                                   <img src="{{url('')}}/default/shipping.png" class="img_120px">
+                                                   <img src="{{url('')}}/default/mall.png" class="img_120px">
                                                  @endif
                                              <!----------------End logo-->
                                     </div><!--col-md-6 content_form_ar-->
@@ -65,7 +65,7 @@
                                             {!! Form::label('twitter',trans('admin.twitter')) !!}
                                             {!! Form::text('twitter',$twitter,['class'=>'form-control']) !!}
                                         </div><!-- /.form-group twitter -->
-
+                                
                                         <div class="form-group">
                                             {!! Form::label('email',trans('admin.email')) !!}
                                             {!! Form::text('email',$email,['class'=>'form-control']) !!}
@@ -74,16 +74,24 @@
                                         {!! Form::text('contact_name',$contact_name,['class'=>'form-control','placeholder'=>trans('admin.contact_name')]) !!}
                                          </div><!-- /.form-group contact_name -->
                                     </div><!--col-md-6 content_form_en-->
+
+                                     <div class="col-md-12">
+                                         <div class="form-group">
+                                             {!! Form::label('country_id',trans('admin.country_id')) !!}
+                                             {!! Form::select('country_id',App\Countreis::pluck('country_name_'.session('lang'),'id'),$country_id,['class'=>'form-control','placeholder'=>'........................']) !!}
+                                         </div><!-- /.form-group owner -->
+                                     </div><!--col-md-12-->
                                      <div class="col-md-12">
                                          <div class="form-group">
                                              {!! Form::label('address',trans('admin.address')) !!}
-                                             {!! Form::textarea('address',$address,['class'=>'form-control','disabled','placeholder'=>trans('admin.you_did_not_locate')]) !!}
+                                             {!! Form::textarea('address',$address,['class'=>'form-control','disabled','placeholder'=>trans('admin.address')]) !!}
                                          </div><!-- /.form-group contact_name -->
-                                     </div>
+                                     </div><!--col-md-12-->
                                 </div><!--row-->
                             </div><!-- box-body-->
                             <!-- /.----------------------------------------------------------------- -->
                                             <!--End   inputs  ---------------------------------------------- -->
+                                              
                                          </section>
                         <!----------------End logo-->
                         <!-- /.---------- -->
@@ -94,9 +102,9 @@
                     }}
                    {!! Form::close() !!}
                 <!-- /.---------- -->
-             		  <a href="{{ aurl('shipping/'.$id.'/edit') }}" class="btn btn-success  "><i class="fa fa-edit"></i> {{trans('admin.edit_page')}}</a>
+             		  <a href="{{ aurl('mall/'.$id.'/edit') }}" class="btn btn-success  "><i class="fa fa-edit"></i> {{trans('admin.edit_page')}}</a>
                        <span>
-                         {!! Form::open(['route'=>['shipping.destroy',$id],'method'=>'delete' ,'class'=>'d-inline-block']) !!}
+                         {!! Form::open(['route'=>['mall.destroy',$id],'method'=>'delete' ,'class'=>'d-inline-block']) !!}
                          {{  Form::button(' <i class="fa fa-trash">  </i>'.trans('admin.delete_fast').'<img src="'.asset('/default/alert.gif').'" class="w_h_20px">', ['type' => 'submit', 'class' => 'btn btn-danger   btn_alert_delete_htis  '] )  }}
                          {!! Form::close() !!}
                        </span>

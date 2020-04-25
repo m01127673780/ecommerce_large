@@ -294,7 +294,6 @@
         'address'                     =>'Address',
 
         // start shipping
-
         'shipping'            =>' Shipping ',
         'logo_shipping'            =>' 	 logo Shipping',
         'page_create_shipping'     => 'Page create Shipping',
@@ -302,6 +301,25 @@
         'create_new_shipping'     => ' Create New Shipping ',
         'contact_name'     => 'Administrator',
         'owner'     => 'Owner',
+        // start shipping
+        'shipping'            =>' Shipping ',
+        'logo_shipping'            =>' 	 logo Shipping',
+        'page_create_shipping'     => 'Page create Shipping',
+        'create_trademarks'            => ' Create Shipping ',
+        'create_new_shipping'     => ' Create New Shipping ',
+        'contact_name'     => 'Administrator',
+        'owner'     => 'Owner',
+
+        // start mall
+        'mall'            =>' Malls ',
+        'logo_mall'            =>' 	Logo Mall ',
+        'page_create_mall'     => ' Page Create Mall ',
+        'create_mall'            => ' Create Mall ',
+        'create_new_mall'     => ' Create  New Mall',
+        'country_id'      => '   country ',
+        'you_did_not_locate'      => "  You didn't find a place on the map    ",
+
+
 
 
     ];

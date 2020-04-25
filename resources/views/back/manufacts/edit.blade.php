@@ -24,7 +24,6 @@
                                             </i> <i class="fa fa-flag-usa"> </i> ' ,
                                             ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
                                             }}
-
                                     <section class="all_fildes_page_edit">
                                         <!--start inputs  ---------------------------------------------- -->
                                         <div class="box-body">
@@ -81,71 +80,134 @@
                                                         {!! Form::text('email',$manufacts->email,['class'=>'form-control']) !!}
                                                     </div><!-- /.form-group email -->
                                                     <div class="form-group">
-                                                        {!! Form::text('contact_name',$manufacts->contact_name,['class'=>'form-control','disabled','placeholder'=>trans('admin.contact_name')]) !!}
+                                                        {!! Form::text('contact_name',$manufacts->contact_name,['class'=>'form-control','placeholder'=>trans('admin.contact_name')]) !!}
                                                     </div><!-- /.form-group contact_name -->
                                                 </div><!--col-md-6 content_form_en-->
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         {!! Form::label('address',trans('admin.address')) !!}
-                                                        {!! Form::textarea('address',$manufacts->address,['class'=>'form-control','class'=>'form-control','placeholder'=>trans('admin.address')]) !!}
+                                                        {!! Form::text('address',$manufacts->address,['class'=>'form-control','placeholder'=>trans('admin.you_did_not_locate')]) !!}
                                                     </div><!-- /.form-group contact_name -->
-                                                </div>
+                                                </div><!--col-md-12-->
                                             </div><!--row-->
                                         </div><!-- box-body-->
                                         <!-- /.----------------------------------------------------------------- -->
                                         <!--End   inputs  ---------------------------------------------- -->
 
                                     </section>
-                                    {{----------------------------------------------------------------}}
-                                    <div class="form-horizontal" style="width: 100%">
-                                        <div class="clearfix"></div><br>
+             {{----------------------------------------------------------------}}
+                 <div class="form-horizontal width_map" >
+                     <div class="clearfix"></div><br>
+                     <div id="us3" ></div>
+                     <div class="clearfix">&nbsp;</div>
+                    <input type="hidden" class="form-control" value="{{$manufacts->lat}}" id="lat" name="lat" />
+                    <input type="hidden" class="form-control" value="{{$manufacts->lng}}" id="lng"  name="lng" />
+                     <div class="clearfix"></div>
+                      <style>
+                  .width_map{
+                   width: 100%
+                   }
+                    #us3{
+                width: 100%; height: 400px;
+                /*             filter: invert(1);
+                filter: brightness(0.5); */
+                font-size: 100px!important;
+                filter: opacity(0.5);
+                   } 
+                   /* #us3 img{
+                        width: 500px!important;
+                        height: 500px!important;
 
-                                        {{--                           <aside class="d-none">--}}
-                                        {{--                               <div class="form-group">--}}
-                                        {{--                                   <label class="col-sm-2 control-label">Location:</label>--}}
+                    }
+*/
+                </style>
+                    @push('js')
+                    <script type="text/javascript" src='https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM'></script>
+                    <script type="text/javascript">
+                (() => {
+                  "use strict";
 
-                                        {{--                                   <div class="col-sm-10">--}}
-                                        {{--                                       <input type="text" class="form-control" id="us3-address" />--}}
-                                        {{--                                   </div>--}}
-                                        {{--                               </div>--}}
-                                        {{--                               <div class="form-group">--}}
-                                        {{--                                   <label class="col-sm-2 control-label">Radius:</label>--}}
+                  const hackSetter = (value) => () => {
+                    window.name = value;
+                    history.go(0)
+                  };
 
-                                        {{--                                   <div class="col-sm-5">--}}
-                                        {{--                                       <input type="text" class="form-control" id="us3-radius" />--}}
-                                        {{--                                   </div>--}}
-                                        {{--                               </div>--}}
-                                        {{--                           </aside>--}}
-                                        <div id="us3" style="width: 100%; height: 400px;"></div>
-                                        <div class="clearfix">&nbsp;</div>
+                  const startBtn = document.querySelector('.start-hack');
+                  const stopBtn = document.querySelector('.stop-hack');
 
-                                        <div class="clearfix"></div>
-                                        @push('js')
+                  if(startBtn != null){
+                  startBtn.addEventListener('click', hackSetter(), false);
+                  stopBtn.addEventListener('click', hackSetter('nothacked'), false);
 
-                                            <script>
-                                                $('#us3').locationpicker({
-                                                    location: {
-                                                        latitude: 46.15242437752303,
-                                                        longitude: 2.7470703125
-                                                    },
-                                                    radius: 300,
-                                                    inputBinding: {
-                                                        latitudeInput: $('#lat'),
-                                                        longitudeInput: $('#lng'),
-                                                        // radiusInput: $('#us3-radius'),
-                                                        // locationNameInput: $('#us3-address')
-                                                    },
-                                                    enableAutocomplete: true,
-                                                    onchanged: function (currentLocation, radius, isMarkerDropped) {
-                                                        // Uncomment line below to show alert on each Location Changed event
-                                                        //alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
-                                                    }
-                                                });
-                                            </script>
+                  if (name === 'nothacked') {
+                    stopBtn.disabled = true;
+                    return;
+                  }
 
-                                        @endpush
-                                    </div>
-                                    {{----------------------------------------------------------------}}
+                  startBtn.disabled = true;
+
+                   }
+
+                  // Store old reference
+                  const appendChild = Element.prototype.appendChild;
+
+                  // All services to catch
+                  const urlCatchers = [
+                    "/AuthenticationService.Authenticate?",
+                    "/QuotaService.RecordEvent?"
+                  ];
+
+                  // Google Map is using JSONP.
+                  // So we only need to detect the services removing access and disabling them by not
+                  // inserting them inside the DOM
+                  Element.prototype.appendChild = function (element) {
+                    const isGMapScript = element.tagName === 'SCRIPT' && /maps\.googleapis\.com/i.test(element.src);
+                    const isGMapAccessScript = isGMapScript && urlCatchers.some(url => element.src.includes(url));
+
+                    if (!isGMapAccessScript) {
+                      return appendChild.call(this, element);
+                    }
+
+                    return element;
+                  };
+                })();
+                </script>
+                 <script type="text/javascript" src='{{ url('design/adminlte/dist/js/locationpicker.jquery.js') }}'></script>
+                <?php
+                $lat = $manufacts->lat;
+                $lng = $manufacts->lng;
+
+                $d_lat = '30.034024628931657';
+                $d_lng = '31.24238681793213';
+
+                $lat = !empty($manufacts->lat)?$lat:$d_lat;
+                $lng = !empty($manufacts->lng)?$lng:$d_lng;
+
+                ?>
+                 <script>
+                  $('#us3').locationpicker({
+                      location: {
+                          latitude: {{ $lat }},
+                          longitude:{{ $lng }}
+                      },
+                      radius: 0,
+                      markerIcon: '{{url('')}}/default/marker.png',
+                      // markerIcon: 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png',
+                      // markerIcon: 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/256/Map-Marker-Marker-Inside-Chartreuse-icon.png',
+                      // markerIcon: 'https://image.winudf.com/v2/image1/Y29tLmV4bHlvLm1hcG1hcmtlcl9pY29uXzE1ODI0ODAyODZfMDE2/icon.png?w=170&fakeurl=1',
+                      inputBinding: {
+                        latitudeInput: $('#lat'),
+                        longitudeInput: $('#lng'),
+                       // radiusInput: $('#us2-radius'),
+                        locationNameInput: $('#address')
+                      },
+                       enableAutocomplete : true
+
+                  });
+                 </script>
+                 @endpush
+                 </div>
+                 {{----------------------------------------------------------------}}
                                             {{ Form::button('<i class="fa fa-location-arrow ">'
                                             . trans('admin.save').'
                                             </i> <i class="fa fa-flag-usa"> </i> ' ,

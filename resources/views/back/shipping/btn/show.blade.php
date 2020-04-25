@@ -75,6 +75,12 @@
                                         {!! Form::text('contact_name',$contact_name,['class'=>'form-control','disabled','placeholder'=>trans('admin.contact_name')]) !!}  
                                          </div><!-- /.form-group contact_name -->
                                     </div><!--col-md-6 content_form_en-->
+                                    <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        {!! Form::label('address',trans('admin.address')) !!}
+                                                        {!! Form::textarea('address',$address,['class'=>'form-control' ,'disabled' ,'placeholder'=>trans('admin.you_did_not_locate')]) !!}
+                                                    </div><!-- /.form-group contact_name -->
+                                                </div><!--col-md-12-->
                                 </div><!--row-->
                             </div><!-- box-body-->
                             <!-- /.----------------------------------------------------------------- -->

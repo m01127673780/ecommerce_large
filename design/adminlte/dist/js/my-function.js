@@ -107,6 +107,15 @@ $(document).on('click','.btn_crete_new_row_shipping',function ()
 });
 // End page shipping------------
 
+// start page mall----------
+$(document).on('click','.btn_crete_new_row_mall',function ()
+{
+    $('#createNewmall').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page mall------------
+
 // $(document).on('click','.btn_edit_row',function ()
 // {
 //      // alert('test');

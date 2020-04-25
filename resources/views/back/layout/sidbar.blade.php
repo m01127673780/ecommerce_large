@@ -315,7 +315,32 @@
                   </li>
                </ul>
             </li>
-            <!--End  manufacts---------->
+            <!--End  shipping---------->
+
+            <li class="nav-item admin has-treeview {{active_menu('mall')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-building nav-icon"></i><p>{{trans('admin.mall')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('mall')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('mall')}}" class="nav-link">
+                        <i class="fas fa-building nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.mall')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_mall')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('mall/create')}}"  class="">
+                           <i class="fas fa-building nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_mall')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  mall---------->
 
 
 
@@ -990,3 +1015,109 @@
    </div>
    <!-- /.sidebar -->
 </aside>
+
+ 
+  @if (session('lang') == 'ar')
+  
+  <style type="text/css">
+   .nav-sidebar .nav-link>.right, .nav-sidebar .nav-link>p>.right {
+    position: absolute;
+    right: 90%!important;
+    top: .7rem;
+    left: 10% !important;
+ </style>
+  @endif 
+  @if (session('lang') == 'en')
+  
+  <style type="text/css">
+ /*<!--  -->*/
+.icon_count_table {
+    font-size: 57px;
+    margin-top: -67px;
+    color: #fffimportant;
+    /* float: right; */
+    position: absolute;
+    right: -70%;
+}
+.small-box {
+    
+    max-height: 160px;
+    }
+
+
+
+
+.inner{
+    margin-left: 10px;
+}
+
+
+@media(max-width: 992px)
+{
+   .icon_count_table {
+    font-size: 53px;
+    margin-top: 0;
+    color: #fffimportant;
+    /* float: right; */
+    position: relative;
+    right: 0;
+}
+}
+ </style>
+  @endif
+<style type="text/css">
+   .small-box p {
+    font-size: 19px;
+    /* font-weight: bold; */
+    font-family: cursive;
+}
+ .nav-sidebar>.nav-item {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+ .nav-sidebar>.nav-item .nav-icon {
+    font-size: 1.2rem;
+    margin-right: 0!important;
+    text-align: center;
+    width: auto;
+    padding: 0;
+    margin-left: 3px!important;
+}
+[class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link.active {
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    font-size: 14px;
+    height: 34px;
+    /* line-height: 1; */
+    letter-spacing: .4px;
+}
+
+.user-panel.content_preview_img_logo {
+    padding: 0;
+    margin: 0;
+    height: 119px;
+    padding: 0px 0px 0px;
+}
+.user-panel .image {
+    /* display: inline-block; */
+    /* padding-left: 0px; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.icon_count_table {
+    font-size: 65px;
+    margin-top: 24px;
+    color: #fff !important;
+}
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.btn-create-new-row {
+    color: #fff;
+    /* padding: 0; */
+    /* padding-right: 18px; */
+    padding-bottom: 0;
+    padding-top: 0;
+}
+</style>

@@ -291,5 +291,14 @@ return [
     'create_new_shipping'     => 'اضافه   شركه ش جديده',
     'owner'     => 'المالك',
 
+    // start mall
+    'mall'                 =>'الممجعات التجاريه ',
+    'logo_mall'            =>' 	  رمز  المول ',
+    'page_create_mall'     => ' صفحه اضافه مول  ',
+    'create_mall'          => ' اضافه مول ',
+    'create_new_mall'      => 'اضافه   مول جديده',
+    'country_id'      => '  الدوله ',
+    'you_did_not_locate'      => '    لم تقوم بتحديد مكان   على الخريطه       ',
+
 ];
 

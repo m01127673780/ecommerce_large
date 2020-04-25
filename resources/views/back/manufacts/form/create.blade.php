@@ -1,8 +1,4 @@
 
-<!--  
-            'lat'                     =>'sometimes|nullable',
-            'lng'                     =>'sometimes|nullable',
-  -->
         <!-- /.----------------------------------------------------------------- -->
         <div class="box-body">
              <div class="row">
@@ -65,58 +61,113 @@
                 </div><!--col-md-6 content_form_en-->
                 <div class="col-md-12">
                     <div class="form-group">
-                        {!! Form::label('address',trans('admin.address')) !!}
-                        {!! Form::textarea('address',old('address'),['class'=>'form-control','class'=>'form-control','placeholder'=>trans('admin.address')]) !!}
+                    {!! Form::label('address',trans('admin.address')) !!}
+                    {!! Form::text('address',old('address'),['class'=>'form-control','class'=>'form-control','placeholder'=>trans('admin.address')]) !!}
                     </div><!-- /.form-group contact_name -->
-                </div>
+
+                </div><!---col-md-12-->
+               
                  {{----------------------------------------------------------------}}
-                 <div class="form-horizontal" style="width: 100%">
+                 <div class="form-horizontal width_map" >
                      <div class="clearfix"></div><br>
-
-                     {{--                           <aside class="d-none">--}}
-                     {{--                               <div class="form-group">--}}
-                     {{--                                   <label class="col-sm-2 control-label">Location:</label>--}}
-
-                     {{--                                   <div class="col-sm-10">--}}
-                     {{--                                       <input type="text" class="form-control" id="us3-address" />--}}
-                     {{--                                   </div>--}}
-                     {{--                               </div>--}}
-                     {{--                               <div class="form-group">--}}
-                     {{--                                   <label class="col-sm-2 control-label">Radius:</label>--}}
-
-                     {{--                                   <div class="col-sm-5">--}}
-                     {{--                                       <input type="text" class="form-control" id="us3-radius" />--}}
-                     {{--                                   </div>--}}
-                     {{--                               </div>--}}
-                     {{--                           </aside>--}}
-                     <div id="us3" style="width: 100%; height: 400px;"></div>
+                     <div id="us3" ></div>
                      <div class="clearfix">&nbsp;</div>
-
+                    <input type="hidden" class="form-control" value="$lat" id="lat" name="lat"  />
+                    <input type="hidden" class="form-control" value="$lng" id="lng" name="lng"  />
                      <div class="clearfix"></div>
-                     @push('js')
+                      <style>
+                  .width_map{
+                   width: 100%
+                   }
+                    #us3{
+                width: 100%; height: 400px;
+                /*             filter: invert(1);
+                filter: brightness(0.5); */
+                font-size: 100px!important;
+                filter: opacity(0.5);
+                   } 
+                   /* #us3 img{
+                        width: 500px!important;
+                        height: 500px!important;
 
-                         <script>
-                             $('#us3').locationpicker({
-                                 location: {
-                                     latitude: 46.15242437752303,
-                                     longitude: 2.7470703125
-                                 },
-                                 radius: 300,
-                                 inputBinding: {
-                                     latitudeInput: $('#lat'),
-                                     longitudeInput: $('#lng'),
-                                     // radiusInput: $('#us3-radius'),
-                                     // locationNameInput: $('#us3-address')
-                                 },
-                                 enableAutocomplete: true,
-                                 onchanged: function (currentLocation, radius, isMarkerDropped) {
-                                     // Uncomment line below to show alert on each Location Changed event
-                                     //alert("Location changed. New location (" + currentLocation.latitude + ", " + currentLocation.longitude + ")");
-                                 }
-                             });
-                         </script>
+                    }
+*/
+                </style>
+                    @push('js')
+                    <script type="text/javascript" src='https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM'></script>
+                    <script type="text/javascript">
+                (() => {
+                  "use strict";
 
-                     @endpush
+                  const hackSetter = (value) => () => {
+                    window.name = value;
+                    history.go(0)
+                  };
+
+                  const startBtn = document.querySelector('.start-hack');
+                  const stopBtn = document.querySelector('.stop-hack');
+
+                  if(startBtn != null){
+                  startBtn.addEventListener('click', hackSetter(), false);
+                  stopBtn.addEventListener('click', hackSetter('nothacked'), false);
+
+                  if (name === 'nothacked') {
+                    stopBtn.disabled = true;
+                    return;
+                  }
+
+                  startBtn.disabled = true;
+
+                   }
+
+                  // Store old reference
+                  const appendChild = Element.prototype.appendChild;
+
+                  // All services to catch
+                  const urlCatchers = [
+                    "/AuthenticationService.Authenticate?",
+                    "/QuotaService.RecordEvent?"
+                  ];
+
+                  // Google Map is using JSONP.
+                  // So we only need to detect the services removing access and disabling them by not
+                  // inserting them inside the DOM
+                  Element.prototype.appendChild = function (element) {
+                    const isGMapScript = element.tagName === 'SCRIPT' && /maps\.googleapis\.com/i.test(element.src);
+                    const isGMapAccessScript = isGMapScript && urlCatchers.some(url => element.src.includes(url));
+
+                    if (!isGMapAccessScript) {
+                      return appendChild.call(this, element);
+                    }
+
+                    return element;
+                  };
+                })();
+                </script>
+                 <script type="text/javascript" src='{{ url('design/adminlte/dist/js/locationpicker.jquery.js') }}'></script>
+                <?php
+                $lat = !empty(old('lat'))?old('lat'):'30.034024628931657';
+                $lng = !empty(old('lng'))?old('lng'):'31.24238681793213';
+
+                ?>
+                 <script>
+                  $('#us3').locationpicker({
+                      location: {
+                          latitude: {{ $lat }},
+                          longitude:{{ $lng }}
+                      },
+                      radius: 0,
+                      markerIcon: '{{url('')}}/default/marker.png',
+                      inputBinding: {
+                        latitudeInput: $('#lat'),
+                        longitudeInput: $('#lng'),
+                       radiusInput: $('#us2-radius'),
+                        locationNameInput: $('#address')
+                       },
+                       enableAutocomplete : true
+                  });
+                 </script>
+                 @endpush
                  </div>
                  {{----------------------------------------------------------------}}
             </div><!--row-->

@@ -54,12 +54,18 @@
                   Route::delete('manufacts/destroy/all', 'ManufactsController@multi_delete');
                   Route::resource('manufacts', 'ManufactsController');
                   Route::post('manufacts/create_quick', 'ManufactsController@quick_store');
+                  Route::get('manufacts/{id}/show','ManufactsController@show');
 
 
                   // start Shipping Route
                   Route::delete('shipping/destroy/all', 'ShippingController@multi_delete');
                   Route::resource('shipping', 'ShippingController');
                   Route::post('shipping/create_quick', 'ShippingController@quick_store');
+
+                 // start Shipping Route
+                  Route::delete('mall/destroy/all', 'MallController@multi_delete');
+                  Route::resource('mall', 'MallController');
+                  Route::post('mall/create_quick', 'MallController@quick_store');
 
 
 

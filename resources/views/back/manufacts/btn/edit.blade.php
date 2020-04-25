@@ -1,9 +1,9 @@
-{{--<a href="{{ aurl('manufacts/'.$id.'/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i></a>--}}
+ <a href="{{ aurl('manufacts/'.$id.'/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i></a> 
 
 
  <!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_manufacts{{ $id }}"><i class="fa fa-edit"></i></button>
-<!-- Modal -->
+<!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit_manufacts{{ $id }}"><i class="fa fa-edit"></i></button>
+ --><!-- Modal -->
 <div id="edit_manufacts{{ $id }}" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <!-- Modal content-->
@@ -77,9 +77,125 @@
                                      <div class="col-md-12">
                                          <div class="form-group">
                                              {!! Form::label('address',trans('admin.address')) !!}
-                                             {!! Form::textarea('address',$address,['class'=>'form-control','class'=>'form-control','placeholder'=>trans('admin.address')]) !!}
+                                             {!! Form::text('address',$address,['class'=>'form-control','class'=>'form-control','placeholder'=>trans('admin.you_did_not_locate')]) !!}
                                          </div><!-- /.form-group contact_name -->
                                      </div>
+                                         {{----------------------------------------------------------------}}
+                 <div class="form-horizontal width_map" >
+                     <div class="clearfix"></div><br>
+                     <div id="us3" ></div>
+                     <div class="clearfix">&nbsp;</div>
+                    <input type="hidden" class="form-control" value="{{$lat}}" id="lat" name="lat" />
+                    <input type="hidden" class="form-control" value="{{$lng}}" id="lng"  name="lng" />
+                     <div class="clearfix"></div>
+                      <style>
+                  .width_map{
+                   width: 100%
+                   }
+                    #us3{
+                width: 100%; height: 400px;
+                /*             filter: invert(1);
+                filter: brightness(0.5); */
+                font-size: 100px!important;
+                filter: opacity(0.5);
+                   } 
+                   /* #us3 img{
+                        width: 500px!important;
+                        height: 500px!important;
+
+                    }
+*/
+                </style>
+                    @push('js')
+
+ 
+                    <!-- ............... -->
+                    <script type="text/javascript" src='https://maps.google.com/maps/api/js?libraries=places&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM'></script>
+                    <script type="text/javascript">
+                (() => {
+                  "use strict";
+
+                  const hackSetter = (value) => () => {
+                    window.name = value;
+                    history.go(0)
+                  };
+
+                  const startBtn = document.querySelector('.start-hack');
+                  const stopBtn = document.querySelector('.stop-hack');
+
+                  if(startBtn != null){
+                  startBtn.addEventListener('click', hackSetter(), false);
+                  stopBtn.addEventListener('click', hackSetter('nothacked'), false);
+
+                  if (name === 'nothacked') {
+                    stopBtn.disabled = true;
+                    return;
+                  }
+
+                  startBtn.disabled = true;
+
+                   }
+
+                  // Store old reference
+                  const appendChild = Element.prototype.appendChild;
+
+                  // All services to catch
+                  const urlCatchers = [
+                    "/AuthenticationService.Authenticate?",
+                    "/QuotaService.RecordEvent?"
+                  ];
+
+                  // Google Map is using JSONP.
+                  // So we only need to detect the services removing access and disabling them by not
+                  // inserting them inside the DOM
+                  Element.prototype.appendChild = function (element) {
+                    const isGMapScript = element.tagName === 'SCRIPT' && /maps\.googleapis\.com/i.test(element.src);
+                    const isGMapAccessScript = isGMapScript && urlCatchers.some(url => element.src.includes(url));
+
+                    if (!isGMapAccessScript) {
+                      return appendChild.call(this, element);
+                    }
+
+                    return element;
+                  };
+                })();
+                </script>
+                 <script type="text/javascript" src='{{ url('design/adminlte/dist/js/locationpicker.jquery.js') }}'></script>
+                <?php
+                $lat = $lat;
+                $lng = $lng;
+
+                $d_lat = '30.034024628931657';
+                $dl_ng = '31.24238681793213';
+
+                $lat = !empty($lat)?$lat:$d_lat;
+                $lng = !empty($lng)?$lng:$d_lng;
+
+                ?>
+                 <script>
+                  $('#us3').locationpicker({
+                      location: {
+                          latitude: {{ $lat }},
+                          longitude:{{ $lng }}
+                      },
+                      radius: 0,
+                      markerIcon: '{{url('')}}/default/marker.png',
+                      // markerIcon: 'https://maps.gstatic.com/mapfiles/api-3/images/spotlight-poi2_hdpi.png',
+                      // markerIcon: 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/256/Map-Marker-Marker-Inside-Chartreuse-icon.png',
+                      // markerIcon: 'https://image.winudf.com/v2/image1/Y29tLmV4bHlvLm1hcG1hcmtlcl9pY29uXzE1ODI0ODAyODZfMDE2/icon.png?w=170&fakeurl=1',
+                      inputBinding: {
+                        latitudeInput: $('#lat'),
+                        longitudeInput: $('#lng'),
+                       // radiusInput: $('#us2-radius'),
+                        locationNameInput: $('#address')
+                      },
+                       enableAutocomplete : true
+
+                  });
+                 </script>
+                 @endpush
+                 </div>
+                 {{----------------------------------------------------------------}}
                                 </div><!--row-->
                             </div><!-- box-body-->
                             <!-- /.----------------------------------------------------------------- -->

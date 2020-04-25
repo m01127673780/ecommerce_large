@@ -1,21 +1,21 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Model\Manufact;
-use App\DataTables\ManufactDatatable;
+use App\Model\Mall;
+use App\DataTables\MallDatatable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
-class ManufactsController extends Controller
+class MallController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(ManufactDatatable $manufacts)
+    public function index(MallDatatable $mall)
     {
-       return $manufacts->render('back.manufacts.index',['title'=>trans('admin.manufacts')]);
+       return $mall->render('back.mall.index',['title'=>trans('admin.mall')]);
     }
 
 
@@ -26,11 +26,11 @@ class ManufactsController extends Controller
 
     public function getAddEditRemoveColumnData()
     {
-        // $manufacts = Manufact::select(['id', 'name', 'email', 'password', 'created_at', 'updated_at']);
+        // $mall = Mall::select(['id', 'name', 'email', 'password', 'created_at', 'updated_at']);
 
-        return Datatables::of($manufacts)
-            ->addColumn('action', function ($manufacts) {
-                return '<a href="#edit-'.$manufacts->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+        return Datatables::of($mall)
+            ->addColumn('action', function ($mall) {
+                return '<a href="#edit-'.$mall->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
             })
             ->editColumn('id', 'ID: {{$id}}')
             ->removeColumn('password')
@@ -45,7 +45,7 @@ class ManufactsController extends Controller
      */
     public function create()
     {
-       return view('back.manufacts.create',['title'=>trans('admin.create-manufacts')]);
+       return view('back.mall.create',['title'=>trans('admin.create-mall')]);
 
     }
 
@@ -68,6 +68,7 @@ class ManufactsController extends Controller
             'insta'                   =>'sometimes|nullable',
             'email'                   =>'sometimes|nullable|email',
             'contact_name'            =>'sometimes|nullable|string',
+            'country_id'              =>'sometimes|nullable|numeric',
             'lat'                     =>'sometimes|nullable',
             'lng'                     =>'sometimes|nullable',
             'address'                 =>'sometimes|nullable',
@@ -86,19 +87,21 @@ class ManufactsController extends Controller
             'address'                 =>trans('admin.address'),
             'insta'                   =>trans('admin.instagram'),
             'email'                   =>trans('admin.email'),
+            'country_id'              =>trans('admin.country_id'),
+            'contact_name'            =>trans('admin.contact_name'),
         ],[
         ]);
         if(request()->hasFile('logo')){
                  $data['logo']        = Up()->Upload([
                         'file'        =>'logo',
-                        'path'        =>'manufacts',
+                        'path'        =>'mall',
                         'upload_type' =>'single',
                         'delete_file' =>'',
                      ]);
                 }
-        Manufact::Create($data);
+        Mall::Create($data);
         session()->flash('success', trans('admin.record_added') );
-         return redirect('admin/manufacts');
+         return redirect('admin/mall');
 
     }
     public function quick_store(Request $request)
@@ -114,6 +117,7 @@ class ManufactsController extends Controller
             'insta'                   =>'sometimes|nullable',
             'email'                   =>'sometimes|nullable|email',
             'contact_name'            =>'sometimes|nullable|string',
+            'country_id'              =>'sometimes|nullable|numeric',
             'lat'                     =>'sometimes|nullable',
             'lng'                     =>'sometimes|nullable',
             'address'                 =>'sometimes|nullable',
@@ -132,17 +136,19 @@ class ManufactsController extends Controller
             'address'                 =>trans('admin.address'),
             'insta'                   =>trans('admin.instagram'),
             'email'                   =>trans('admin.email'),
+            'country_id'              =>trans('admin.country_id'),
+            'contact_name'            =>trans('admin.contact_name'),
         ],[
         ]);
         if(request()->hasFile('logo')){
                  $data['logo']        = Up()->Upload([
                         'file'        =>'logo',
-                        'path'        =>'manufacts',
+                        'path'        =>'mall',
                         'upload_type' =>'single',
                         'delete_file' =>'',
                      ]);
                 }
-        Manufact::Create($data);
+        Mall::Create($data);
 
         session()->flash('successhome', trans('admin.record_added') );
         return back();
@@ -165,16 +171,16 @@ class ManufactsController extends Controller
     public function edit($id)
     {
 
-        $manufacts = Manufact::find($id);
+        $mall = Mall::find($id);
         $title = trans('admin.edit');
-         return view('back.manufacts.edit',compact('manufacts','title'));
+         return view('back.mall.edit',compact('mall','title'));
     }
         public function show($id)
     {
-        $manufacts = Manufact::find($id);
-       // return dd ($manufacts);
+        $mall = Mall::find($id);
+       return dd ($mall);
         $title = trans('admin.show');
-         return view('back.manufacts.show',compact('manufacts','title'));
+         return view('back.mall.edit',compact('mall','title'));
     }
 
     /**
@@ -197,6 +203,7 @@ class ManufactsController extends Controller
             'insta'                   =>'sometimes|nullable',
             'email'                   =>'sometimes|nullable|email',
             'contact_name'            =>'sometimes|nullable|string',
+            'country_id'              =>'sometimes|nullable|numeric',
             'lat'                     =>'sometimes|nullable',
             'lng'                     =>'sometimes|nullable',
             'address'                 =>'sometimes|nullable',
@@ -215,20 +222,22 @@ class ManufactsController extends Controller
             'address'                 =>trans('admin.address'),
             'insta'                   =>trans('admin.instagram'),
             'email'                   =>trans('admin.email'),
+            'country_id'              =>trans('admin.country_id'),
+            'contact_name'            =>trans('admin.contact_name'),
         ],[
         ]);
         if(request()->hasFile('logo')){
                  $data['logo']        = Up()->Upload([
                         'file'        =>'logo',
-                        'path'        =>'manufacts',
+                        'path'        =>'mall',
                         'upload_type' =>'single',
-                        'delete_file' =>Manufact::find($id)->logo,
+                        'delete_file' =>Mall::find($id)->logo,
                      ]);
                 }
 
-        Manufact::where('id',$id)->update($data);
+        Mall::where('id',$id)->update($data);
         session()->flash('success', trans('admin.updated_record') );
-        return redirect('admin/manufacts');
+        return redirect('admin/mall');
     }
 
     /**
@@ -239,32 +248,32 @@ class ManufactsController extends Controller
      */
     public function destroy($id)
     {
-        // Manufact::find($id)->delete();
-         $manufacts =  Manufact::find($id);
-         Storage::delete($manufacts->logo);
-         $manufacts->delete();
+        // Mall::find($id)->delete();
+         $mall =  Mall::find($id);
+         Storage::delete($mall->logo);
+         $mall->delete();
         session()->flash('success', trans('admin.deleted_record') );
-        return redirect('admin/manufacts');
+        return redirect('admin/mall');
     }
 
     public function multi_delete()
     {
         if(is_array(request('item'))){
-            // Manufact::destroy(request('item'));
+            // Mall::destroy(request('item'));
             foreach (request('item') as $id)
             {
-                $manufacts =  Manufact::find($id);
-                Storage::delete($manufacts->logo);
-                $manufacts->delete();
+                $mall =  Mall::find($id);
+                Storage::delete($mall->logo);
+                $mall->delete();
             }
 
         }/*if*/ else{
-            // Manufact::find(request('item'))->delete();
-              $manufacts =  Manufact::find(request('item'));
-                Storage::delete($manufacts->logo);
-                $manufacts->delete();
+            // Mall::find(request('item'))->delete();
+              $mall =  Mall::find(request('item'));
+                Storage::delete($mall->logo);
+                $mall->delete();
         }
         session()->flash('success', trans('admin.deleted_record') );
-        return redirect('admin/manufacts');
+        return redirect('admin/mall');
     }
 }
