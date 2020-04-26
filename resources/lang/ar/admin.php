@@ -319,6 +319,13 @@ return [
     'create_size'          => ' اضافه حجم ',
     'create_new_size'      => 'اضافه   حجم جديد',
     'is_public'      => ' مقاس عام      ',
+ // start flavors
+     'flavors'                 =>' النكهات   ',
+    'icon_flavor'            =>' 	  رمز  النكهه ',
+    'page_create_flavor'     => ' صفحه اضافه  نكهه  ',
+    'create_flavor'          => ' اضافه نكهه ',
+    'create_new_flavor'      => 'اضافه   نكهه جديد',
+    'is_public_flavor'      => ' نكهه عامه      ',
 
 //puplic lang
     'select_dep'      => ' حداد القسم      ',

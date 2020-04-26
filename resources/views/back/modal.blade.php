@@ -10,3 +10,4 @@
 @include('back.trademarks.modal.create')
 @include('back.weight.modal.create')
 @include('back.sizes.modal.create')
+@include('back.flavors.modal.create')

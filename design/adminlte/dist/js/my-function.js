@@ -104,6 +104,15 @@ $(document).on('click','.btn_crete_new_row_size',function ()
 });
 // End page size------------
 
+// start page flavors----------
+$(document).on('click','.btn_crete_new_row_flavor',function ()
+{
+     $('#createNewflavor').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+ // End page flavors------------
+
 
 // start page departments----------
 $(document).on('click','.btn_crete_new_row_departments',function ()

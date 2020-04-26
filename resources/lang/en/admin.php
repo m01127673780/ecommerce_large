@@ -338,10 +338,19 @@
         // start sizes
          'sizes'            =>' Sizes ',
         'logo_size'            =>' 	Icon  Size ',
+        'icon_size'            =>' 	Icon  Size ',
         'page_create_size'     => ' Page Create Size ',
         'create_size'            => ' Create Size ',
         'create_new_size'     => ' Create  New Size',
         'is_public'     => ' Public Size',
+
+        // start flavors
+         'flavors'            =>' Flavors ',
+        'icon_flavor'            =>' 	Icon  Flavor ',
+        'page_create_flavor'     => ' Page Create Flavor ',
+        'create_flavor'            => ' Create Flavor ',
+        'create_new_flavor'     => ' Create  New Flavor',
+        'is_public_flavor'     => ' Public Flavors',
 
 
 

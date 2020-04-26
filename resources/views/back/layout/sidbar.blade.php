@@ -414,6 +414,31 @@
             </li>
             <!--End  sizes---------->
 
+  <li class="nav-item admin has-treeview {{active_menu('flavors')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-tags nav-icon"></i><p>{{trans('admin.flavors')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('flavors')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('flavors')}}" class="nav-link">
+                        <i class="fas fa-tags nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.flavors')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_flavor">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_flavor')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('flavors/create')}}"  class="">
+                           <i class="fas fa-tags nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_flavor')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  sizes---------->
+
 
 
             {{-------------------------------------------------------------------------------------------}}

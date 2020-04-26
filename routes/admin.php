@@ -86,6 +86,14 @@
 
 
 
+        // start Shipping size
+                  Route::delete('flavors/destroy/all', 'FlavorController@multi_delete');
+                  Route::resource('flavors', 'FlavorController');
+                  Route::post('flavors/create_quick', 'FlavorController@quick_store');
+                  Route::get('flavors/{id}/show','FlavorController@show');
+
+
+
 
                   // start setting Route
                   Route::get('settings', 'SettingsController@setting');
