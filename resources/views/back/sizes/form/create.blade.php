@@ -1,9 +1,11 @@
 
+
+
         <!-- /.----------------------------------------------------------------- -->
         <div class="box-body">
              <div class="row">
                 {{ Form::button('<i class="fa fa-location-arrow "> '
-                    . trans('admin.create_new_weight').'
+                    . trans('admin.create_new_size').'
                     </i> <i class="fas fa-cube"> </i> ' ,
                     ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
                 }}
@@ -37,11 +39,21 @@
                     <!----------------End icon-->
 
                 </div><!--col-md-6 content_form_en-->
-
+                  <div class="col-md-12">
+                  <input type="hidden" name="department_id" class="department_id" value="{{ old('department_id') }}">
+                      <div class="form-group">
+                          {!! Form::label('department_id',trans('admin.department_id')) !!}
+                          {!! Form::select('department_id',App\Model\Department::pluck('dep_name_'.session('lang'),'id'),old('department_id'),['class'=>'form-control','placeholder'=>'........................']) !!}
+                      </div><!-- /.form-group owner -->
+                  <div class="form-group">
+                     {!! Form::label('is_public',trans('admin.is_public')) !!}
+                     {!! Form::select('is_public',['yes'=>trans('admin.yes'),'no'=>trans('admin.no')],old('is_public'),['class'=>'form-control']) !!}
+                 </div>
+                </div><!--col-md-12 -->
 
             </div><!--row-->
             {{ Form::button('<i class="fa fa-location-arrow "> '
-                                                 . trans('admin.create_new_weight').'
+                                                 . trans('admin.create_new_size').'
                                                  </i> <i class="fas fa-cube"> </i> ' ,
                                                  ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
                                              }}

@@ -206,11 +206,26 @@ FB.ui({
 
 {{--    ---------------------------------start virgin 3 my custom css 3---------------}}
     <style>
+        /*-------start public style---------*/
+            a:hover
+                 {
+                    text-decoration: none!important;
+                 }
+        /*-------End   public style ---------*/
         .input-group.icon_colo
         {margin-top: 47px;}
                 .input-group
         {margin-bottom: 10px;}
 
+    /*-------start datatable---------*/
+        .a_dir_create
+        {
+            color: #fff!important;
+        }        .a_dir_create:hover
+        {
+            color: #fff!important;
+        }
+    /*-------End   datatable---------*/
     </style>
 {{--    ---------------------------------End  virgin 3 my custom css 3---------------}}
 

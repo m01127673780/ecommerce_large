@@ -78,6 +78,12 @@
                   Route::resource('weights', 'WeightController');
                   Route::post('weights/create_quick', 'WeightController@quick_store');
 
+                 // start Shipping size
+                  Route::delete('sizes/destroy/all', 'SizeController@multi_delete');
+                  Route::resource('sizes', 'SizeController');
+                  Route::post('sizes/create_quick', 'SizeController@quick_store');
+                  Route::get('sizes/{id}/show','SizeController@show');
+
 
 
 

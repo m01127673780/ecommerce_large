@@ -95,6 +95,14 @@ $(document).on('click','.btn_crete_new_row_weight',function ()
     $(".modal_massage .message_error").fadeIn();
 });
 // End page weight------------
+// start page size----------
+$(document).on('click','.btn_crete_new_row_size',function ()
+{
+     $('#createNewsize').modal('show');
+    $(".message_error").fadeOut();
+    $(".modal_massage .message_error").fadeIn();
+});
+// End page size------------
 
 
 // start page departments----------

@@ -335,6 +335,18 @@
         'create_weight'            => ' Create Weight ',
         'create_new_weight'     => ' Create  New Weight',
 
+        // start sizes
+         'sizes'            =>' Sizes ',
+        'logo_size'            =>' 	Icon  Size ',
+        'page_create_size'     => ' Page Create Size ',
+        'create_size'            => ' Create Size ',
+        'create_new_size'     => ' Create  New Size',
+        'is_public'     => ' Public Size',
+
+
+
+//puplic lang
+        'select_dep'      => ' select department      ',
 
 
 

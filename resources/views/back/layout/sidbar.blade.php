@@ -302,7 +302,7 @@
                         <i class="fa fa-user-cog nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.shipping')}}</p>
                      </a></li>
                   <li class="nav-item">
-                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_shipping">
                         <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_shipping')}}</p>
                      </button>
                   </li>
@@ -326,7 +326,7 @@
                         <i class="fas fa-building nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.mall')}}</p>
                      </a></li>
                   <li class="nav-item">
-                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_mall">
                         <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_mall')}}</p>
                      </button>
                   </li>
@@ -351,7 +351,7 @@
                         <i class="fas fa-paint-brush nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.color')}}</p>
                      </a></li>
                   <li class="nav-item">
-                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_color">
                         <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_color')}}</p>
                      </button>
                   </li>
@@ -367,28 +367,52 @@
             <!--End  color---------->
    <li class="nav-item admin has-treeview {{active_menu('weights')[0]}}">
                <a href="#" class="nav-link">
-                  <i class="fas fa-paint-brush nav-icon"></i><p>{{trans('admin.weights')}}<i class="fas fa-angle-left right"></i></p>
+                  <i class="fas fa-tags nav-icon"></i><p>{{trans('admin.weights')}}<i class="fas fa-angle-left right"></i></p>
                </a>
                <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('weights')[1]}}">
 
                   <li class="nav-item"> <a href="{{aurl('weights')}}" class="nav-link">
-                        <i class="fas fa-paint-brush nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.weight')}}</p>
+                        <i class="fas fa-tags nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.weight')}}</p>
                      </a></li>
                   <li class="nav-item">
-                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_manufacts">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_weight">
                         <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_weight')}}</p>
                      </button>
                   </li>
                   <li class="nav-item">
                      <button   class="nav-link btn btn-success btn-create-new-row     ">
                         <a href="{{aurl('weights/create')}}"  class="">
-                           <i class="fas fa-building nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_weight')}}</p>
+                           <i class="fas fa-tags nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_weight')}}</p>
                         </a>
                      </button>
                   </li>
                </ul>
             </li>
-            <!--End  mall---------->
+            <!--End  weights---------->
+  <li class="nav-item admin has-treeview {{active_menu('sizes')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-tags nav-icon"></i><p>{{trans('admin.sizes')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('sizes')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('sizes')}}" class="nav-link">
+                        <i class="fas fa-tags nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.sizes')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_size">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_size')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('sizes/create')}}"  class="">
+                           <i class="fas fa-tags nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_size')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  sizes---------->
 
 
 

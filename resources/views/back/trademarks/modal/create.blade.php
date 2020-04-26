@@ -8,7 +8,7 @@
                     {{-- -------------------------------------------------------}}
                     <div class="box">
                         <div class="box-header">
-                            <center class="box-title"><h3 class="head_title">{{ trans('admin.create_create') }}</h3></center>
+                            <center class="box-title"><h3 class="head_title">{{ trans('admin.create_trademark') }}</h3></center>
                         </div>
                         <section class="modal_massage"> @include('back.message_error') </section>
                           <!-- /.box-header ,'required'=>'required' -->

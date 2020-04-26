@@ -68,13 +68,13 @@ return [
     'ask_delete_item'              => 'هل انت موافق على حذف السجلات التالية وهي عددها ',
     'ask_delete_dep'               => '  هل تريد حذف قسم : ',
     'please_check_some_records'    => 'من فضلك قم باختيار بعض السجلات للحذف',
-    'All'    => 'الكل',
-    'show_all'    => 'عرض الجميع',
+    'All'                          => 'الكل',
+    'show_all'                     => 'عرض الجميع',
     'yes'                          => 'حسنا',
     'no'                           => 'لا',
     'close'                        => 'غلق',
     'success_settings'             => 'تم التحديث  الاعدادات بنجا ح',
-    'page_settings'             => 'صفحه الاعدادات',
+    'page_settings'                => 'صفحه الاعدادات',
     'success_settings'             => 'تم التحديث  الاعدادات بنجا ح',
     'name'                         => 'الاسم',
     'email'                        => 'البريد الالكترونى',
@@ -85,7 +85,7 @@ return [
     'updated_record'               => 'تم تحديث البيانات بنجاح',
     'deleted_record'               => 'تم الحذف للبيانات بنجاح',
     'page-create-admin'            => 'صفحه انشاء مشرف',
-    'delete_this'                 => 'هل  انت موافق على حذف  :' . ' :name '.' ؟ ',
+    'delete_this'                  => 'هل  انت موافق على حذف  :' . ' :name '.' ؟ ',
     'delete_fast'                  => ' حذف سريع *  ',
     'users'                        => ' الاعضاء',
     'users'                        => ' الاعضاء',
@@ -312,6 +312,16 @@ return [
     'page_create_weight'     => ' صفحه اضافه مقاس  ',
     'create_weight'          => ' اضافه مقاس ',
     'create_new_weight'      => 'اضافه   مقاس جديد',
+ // start size
+     'sizes'                 =>' الاحجام   ',
+    'icon_size'            =>' 	  رمز  الحجم ',
+    'page_create_size'     => ' صفحه اضافه حجم  ',
+    'create_size'          => ' اضافه حجم ',
+    'create_new_size'      => 'اضافه   حجم جديد',
+    'is_public'      => ' مقاس عام      ',
+
+//puplic lang
+    'select_dep'      => ' حداد القسم      ',
 
 ];
 

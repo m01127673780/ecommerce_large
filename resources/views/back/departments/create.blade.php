@@ -21,7 +21,6 @@
                 "plugins" : [  "wholerow","radio","/*checkbox*/" ]
             });//#jstree
         });//document
-
         //-----------------------get id
             $('#jstree').on('changed.jstree',function(e,data){
                 var  i , j , r =[];//=  var  i[]; var  j[];var  r[];
@@ -32,7 +31,6 @@
                 $('.parent_id').val(r.join(','));
                 //1,2,3,4,5,6
             });/*changed*/
-
     </script>
     @endpush
     <div class="wrapper">
@@ -65,7 +63,10 @@
                                     <div class="clearfix"></div>
                                     <div id="jstree"></div>
                                     <input type="hidden" name="parent" class="parent_id" value="{{old('parent')}}">
-                                    <div class="clearfix"></div>
+                                    <div class="form-group">
+                                        {!! Form::label('select_dep',trans('admin.select_dep')) !!}
+                                        <div class="clearfix"></div>
+                                    </div><!-- /.form-group select_dep -->
                                     <!--  start js tree ----------------------------------- -->
                                     <div class="form-group">
                                         {!! Form::label('description',trans('admin.description')) !!}
@@ -85,6 +86,7 @@
                                     <div>  <img   src="{{url('default')}}/dep.png" class="img_100px"></div>
 
                                 <!----------------End icon-->
+
                                     {{ Form::button('<i class="fa fa-location-arrow ">'
                                         . trans('admin.create_new_departments').'
                                         </i> <i class="fas fa-th"> </i> ' ,
@@ -99,8 +101,17 @@
                         <!-- /.card -->
                     </div>
                     <!-- /.col -->
-                </div>
-                <!-- /.row -->
+                    <div class="col-md-12">
+                        <input type="hidden" name="department_id" class="department_id" value="{{ old('department_id') }}">
+                        <div id="jstree"></div>
+                        <div class="form-group">
+                            {!! Form::label('is_public',trans('admin.is_public')) !!}
+                            {!! Form::select('is_public',['yes'=>trans('admin.yes'),'no'=>trans('admin.no')],old('is_public'),['class'=>'form-control']) !!}
+                        </div>
+                    </div><!--col-md-12 -->
+
+                </div>   <!-- /.row -->
+
             </section>
             <!-- /.content -->
         </div>

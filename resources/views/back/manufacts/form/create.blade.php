@@ -3,7 +3,7 @@
         <div class="box-body">
              <div class="row">
                 {{ Form::button('<i class="fa fa-location-arrow "> '
-                    . trans('admin.create_new_product').'
+                    . trans('admin.create_new_manufact').'
                     </i> <i class="fas fa-cube"> </i> ' ,
                     ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
                 }}
@@ -172,7 +172,7 @@
                  {{----------------------------------------------------------------}}
             </div><!--row-->
             {{ Form::button('<i class="fa fa-location-arrow "> '
-                                                 . trans('admin.create_new_product').'
+                                                 . trans('admin.create_new_manufact').'
                                                  </i> <i class="fas fa-cube"> </i> ' ,
                                                  ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
                                              }}
