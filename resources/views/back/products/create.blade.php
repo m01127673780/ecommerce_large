@@ -19,11 +19,82 @@
                              <div class="box-body">
                                      {!! Form::open(['url'=>aurl('products'),'files'=>true]) !!}
                                    <div class="row">
-                                    {{ Form::button('<i class="fa fa-location-arrow "> '
-                                        . trans('admin.create_new_product').'
-                                        </i> <i class="fas fa-cube"> </i> ' ,
-                                        ['type' => 'submit', 'class' => 'form-control btn btn-info btn-lg'] )
-                                    }}
+                                       <!--container-->
+                                       <div class="col-md-12" >
+                                                                                       <h4>{{$title }}</h4> <br>
+                                           <a class="btn btn-primary save" href="">{{ trans('admin.save') }} <i class="fa fa-save "></i></a>
+                                           <a class="btn btn-info save_continue" href="">{{ trans('admin.save_continue') }} <i class="fa fa-save "></i></a>
+                                           <a class="btn btn-success copy_products" href="">   {{ trans('admin.copy_products') }} <i class="fa fa-window-restore"></i></a>
+                                           <a class="btn btn-danger delete" href="">        {{ trans('admin.delete') }}      <i class="fa fa-trash"></i></a>
+
+                                           <br> <br>
+                                            <div class="container_contect_tabs">
+                                               <!-- Nav tabs -->
+                                       <ul class="nav nav-tabs" role="tablist">
+                                 <li class="nav-item">
+                                     <a class="nav-link active" data-toggle="tab" href="#department">{{ trans('admin.department') }}
+                                       <i class="fa fa-align-right"></i>  </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_setting">{{ trans('admin.product_setting') }}
+                                     <i class="fas fa-cogs  "></i> </a>
+                                 </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_media">{{ trans('admin.product_media') }}
+                                   <i class="fas fa-photo-video"></i>    </a>
+                                 </li>
+
+                                     <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_info">{{ trans('admin.product_info') }}
+                                    <i class="fas fa-info-circle"></i>  </a>
+                                 </li>
+
+                                     <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_size_weight">{{ trans('admin.product_size_weight') }}
+                                    <i class="fas fa-shipping-fast"></i>  </a>
+                                 </li>
+
+                                     <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_other_data">{{ trans('admin.product_other_data') }}
+                                    <i class="fas fa-folder-plus"></i>  </a>
+                                 </li> 
+                                       </ul>
+                                               <!-- Tab content start  -->
+                                               <div class="tab-content">
+                                                   <div id="department" class="container tab-pane active"><br>
+                                                       <h3>{{ trans('admin.department') }}</h3>
+                                                       <aside class="content_tab_info  tab_department">
+                                                        ...............
+                                                       </aside><!--content_tab_info department-->
+                                                   </div>
+                                                   <div id="product_setting" class="container tab-pane fade"><br>
+                                                       <h3>{{ trans('admin.product_setting') }}</h3>
+                                                       <aside class="content_tab_info  tab_product_setting">
+                                                        ...............
+                                                       </aside><!--content_tab_info product_setting-->                                                   </div>
+                                                   <div id="product_media" class="container tab-pane fade"><br>
+                                                       <h3>{{ trans('admin.product_media') }}</h3>
+                                                       <aside class="content_tab_info  tab_product_media">
+                                                        ...............
+                                                       </aside><!--content_tab_info product_media-->                                                   </div>
+                                                  <div id="product_info" class="container tab-pane fade"><br>
+                                                       <h3>{{ trans('admin.product_info') }}</h3>
+                                                       <aside class="content_tab_info  tab_product_info">
+                                                        ...............
+                                                       </aside><!--content_tab_info product_info-->                                                  </div>    
+                                                        <div id="product_size_weight" class="container tab-pane fade"><br>
+                                                       <h3>{{ trans('admin.product_size_weight') }}</h3>
+                                                       <aside class="content_tab_info  tab_product_size_weight">
+                                                        ...............
+                                                       </aside><!--content_tab_info product_size_weight-->                                                  </div>
+                                                            <div id="product_other_data" class="container tab-pane fade"><br>
+                                                       <h3>{{ trans('admin.product_other_data') }}</h3>
+                                                       <aside class="content_tab_info  tab_product_other_data">
+                                                        ...............
+                                                       </aside><!--content_tab_info product_other_data-->                                                  </div>
+                                               </div> <!-- Tab content start  -->
+                                           </div>
+                                        </div><!--col-md-12-->
                                    <div class="col-md-6 content_form_ar" >
                                     <div class="form-group">
                                         {!! Form::label('product_name_ar',trans('admin.product_name_ar')) !!}

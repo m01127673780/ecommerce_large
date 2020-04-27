@@ -226,6 +226,35 @@ FB.ui({
             color: #fff!important;
         }
     /*-------End   datatable---------*/
+    /*-------start    products---------*/
+    .tab-content
+    {
+      border:1px solid #fff; 
+    }
+       .container_contect_tabs .nav-tabs .nav-link{
+        color: #fefefe;
+
+        }  
+
+.container_contect_tabs .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link
+{
+        color: #000;
+        
+
+}
+.container_contect_tabs .nav-tabs .nav-link.active i
+{
+    -webkit-animation: fa-spin 2s linear infinite;
+    animation: fa-spin 2s linear infinite;
+    background: #fff;
+
+}
+.container_contect_tabs .nav-tabs .nav-link 
+{ 
+   /*background: #302929;*/
+   border: 1px solid #fff
+}
+           /*-------End      products---------*/
     </style>
 {{--    ---------------------------------End  virgin 3 my custom css 3---------------}}
 

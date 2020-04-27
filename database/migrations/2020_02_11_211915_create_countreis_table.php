@@ -16,6 +16,7 @@ class CreateCountreisTable extends Migration
             $table->increments('id');
             $table->string('country_name_ar')->nullable();
             $table->string('country_name_en')->nullable();
+            $table->string('currency')->nullable();
             $table->string('mob')->nullable();
             $table->string('code')->nullable();
             $table->string('logo')->nullable();

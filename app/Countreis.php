@@ -9,7 +9,8 @@ class Countreis extends Model
         'country_name_ar', 
         'country_name_en', 
         'mob', 
-        'code', 
+        'currency',
+        'code',
         'logo',
     ];
 }

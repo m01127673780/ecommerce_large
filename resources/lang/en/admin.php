@@ -144,7 +144,9 @@
     'mob'     => ' Choose / ZIP code',
 
     'mob_show'     => '   ZIP code   ',
-    'code'     => ' Country code ',
+    'code_show'     => '  Country Code    ',
+    'code'     => ' Code',
+    'currency'     => ' Currency  ',
 
     'logo_countreis'     => ' Choose the country flag / emblem ',
     'custom_logo_countreis'     => ' Country Logo ',
@@ -164,50 +166,14 @@
     // start departments
     'add_product_in_th_dep'     => '    Add Product  Here    ',
 
-
-
-    // start products
-    'products'                  => 'products',
-    'product'                  => '  product',
-    'product_name_ar'                  => '          Product Name ar     ',
-    'product_name_en'                  => '      Product Name en      ',
-    'photo_product'             => '   Photo Product   ',
-    'photo_products'             => '   Photo Product   ',
-    'add_by_photo_products'             => ' add by photo      ',
-    'add_by_ar'             => '       Add by ar    ',
-    'add_by_en'             => '       Add by en    ',
-    'discount'             => '  discount  ',
-    'create_new_product'     => '  Create New Product  ',
-    'create_new_products'     => '  Create New Product  ',
-    'page_create_product'     => 'Page Create Product    ',
-    'price'                  => ' Price ',
-    'price_old'                  => '  Price Old    ',
-    'description_ar'                  => '   Description ar       ',
-    'description_en'                  => '   Description en       ',
-
     // start departments
     'add_product_in_th_dep'     => '    Add Product In Department ',
 
-
-
-
-
-
-
-
-
-
     // --------------------------------------------
-
-
-
-
-
 
     // start slider
 
     'link'     => '  Link address',
-
     'photo_slider'     => '       Photo Slider  ',
     'create_new_sliders'     => '   Create New Sliders   ',
     'create_create'     => '  new addition    ',
@@ -351,6 +317,27 @@
         'create_flavor'            => ' Create Flavor ',
         'create_new_flavor'     => ' Create  New Flavor',
         'is_public_flavor'     => ' Public Flavors',
+
+
+        // start products
+        'products'                  => 'products',
+        'product'                  => '  product',
+        'product_name_ar'                  => '          Product Name ar     ',
+        'product_name_en'                  => '      Product Name en      ',
+        'photo_product'             => '   Photo Product   ',
+        'photo_products'             => '   Photo Product   ',
+        'add_by_photo_products'             => ' add by photo      ',
+        'add_by_ar'             => '       Add by ar    ',
+        'add_by_en'             => '       Add by en    ',
+        'discount'             => '  discount  ',
+        'create_new_product'     => '  Create New Product  ',
+        'create_new_products'     => '  Create New Product  ',
+        'page_create_product'     => 'Page Create Product    ',
+        'price'                  => ' Price ',
+        'price_old'                  => '  Price Old    ',
+        'description_ar'                  => '   Description ar       ',
+        'description_en'                  => '   Description en       ',
+// ----------------start virgin two in products
 
 
 

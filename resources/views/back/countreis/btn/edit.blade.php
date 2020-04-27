@@ -33,6 +33,10 @@
                     {!! Form::label('code',trans('admin.code')) !!}
                     {!! Form::text('code',$code,['class'=>'form-control']) !!}
                 </div><!-- /.form-group code -->
+                   <div class="form-group">
+                    {!! Form::label('currency',trans('admin.currency')) !!}
+                    {!! Form::text('currency',$currency,['class'=>'form-control']) !!}
+                </div><!-- /.form-group currency -->
                 <!----------------start  logo-->
                 <aside class="row model_actions">
                     <div class="col-md-8 content_btn-actions_model">  </div><!--col-md-8-->

@@ -8,7 +8,6 @@ class Product extends Model
 {
     protected $table    = 'products';
     protected $fillable = [
-
         'product_name_ar',
         'product_name_en',
         'description_ar',
@@ -17,11 +16,29 @@ class Product extends Model
         'add_by_en',
         'add_by_photo',
         'discount',
-        'price_offer',
         'price_old',
-        'price',
+        //--------------start virgin two
         'photo',
         'department_id',
+        'trade_id',
+        'manu_id',
+        'color_id',
+        'size_id',
+        'size',
+        'currency_id',
+        'price',
+        'stock',
+        'start_at',
+        'end_at',
+        'start_offer_at',
+        'end_offer_at',
+        'price_offer',
+        'other_data',
+        'weight',
+        'weight_id',
+        'status',
+        'reason',
+
     ];
  
 }

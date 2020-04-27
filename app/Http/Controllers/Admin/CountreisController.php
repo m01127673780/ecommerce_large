@@ -61,6 +61,7 @@ class CountreisController extends Controller
             'country_name_ar'         =>'required',
             'country_name_en'         =>'required',
             'mob'                     =>'required',
+            'currency'                =>'required',
             'code'                    =>'required',
             'logo'                  =>v_image(),
 
@@ -70,6 +71,7 @@ class CountreisController extends Controller
             'mob'                     =>trans('admin.mob'),
             'code'                    =>trans('admin.code'),
             'logo'                    =>trans('admin.logo'),
+            'currency'                =>trans('admin.currency'),
         ],[
 
         ]);
@@ -92,6 +94,7 @@ class CountreisController extends Controller
             'country_name_ar'         =>'required',
             'country_name_en'         =>'required',
             'mob'                     =>'required',
+            'currency'                =>'required',
             'code'                    =>'required',
             'logo'                    =>v_image(),
 
@@ -101,6 +104,7 @@ class CountreisController extends Controller
             'mob'                     =>trans('admin.mob'),
             'code'                    =>trans('admin.code'),
             'logo'                    =>trans('admin.logo'),
+            'currency'                =>trans('admin.currency'),
         ],[
 
         ]);
@@ -161,6 +165,7 @@ class CountreisController extends Controller
             'country_name_ar'         =>'required',
             'country_name_en'         =>'required',
             'mob'                     =>'required',
+            'currency'                =>'required',
             'code'                    =>'required',
             'logo'                    =>'sometimes|nullable|'.v_image(),
 
@@ -170,6 +175,7 @@ class CountreisController extends Controller
             'mob'                     =>trans('admin.mob'),
             'code'                    =>trans('admin.code'),
             'logo'                    =>trans('admin.logo'),
+            'currency'                =>trans('admin.currency'),
         ],[
 
         ]);

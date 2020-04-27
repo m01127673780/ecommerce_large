@@ -437,7 +437,33 @@
                   </li>
                </ul>
             </li>
-            <!--End  sizes---------->
+            <!--End  flavors---------->
+
+
+  <li class="nav-item admin has-treeview {{active_menu('products')[0]}}">
+               <a href="#" class="nav-link">
+                  <i class="fas fa-tags nav-icon"></i><p>{{trans('admin.products')}}<i class="fas fa-angle-left right"></i></p>
+               </a>
+               <ul class="nav nav-treeview content_W_20px_h_20px" style="{{active_menu('products')[1]}}">
+
+                  <li class="nav-item"> <a href="{{aurl('products')}}" class="nav-link">
+                        <i class="fas fa-tags nav-icon"></i><p> <i class="fa fa-file-signature"></i> {{trans('admin.products')}}</p>
+                     </a></li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-info btn-create-new-row  btn_crete_new_row_product">
+                        <i class="fas fa-truck-moving nav-icon icon-btn-create-new-row"></i><p class="">{{trans('admin.create_new_product')}}</p>
+                     </button>
+                  </li>
+                  <li class="nav-item">
+                     <button   class="nav-link btn btn-success btn-create-new-row     ">
+                        <a href="{{aurl('products/create')}}"  class="">
+                           <i class="fas fa-tags nav-icon  "></i><i class="fa fa-scroll"></i> <p class="">{{trans('admin.page_create_product')}}</p>
+                        </a>
+                     </button>
+                  </li>
+               </ul>
+            </li>
+            <!--End  products---------->
 
 
 

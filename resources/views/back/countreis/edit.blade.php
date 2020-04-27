@@ -34,6 +34,10 @@
                                         {!! Form::label('mob',trans('admin.mob')) !!}
                                         {!! Form::text('mob',$countreis->mob,['class'=>'form-control' ]) !!}
                                     </div><!-- /.form-group mob -->
+                                    <div class="form-group">
+                                        {!! Form::label('currency',trans('admin.currency')) !!}
+                                        {!! Form::text('currency',$countreis->currency,['class'=>'form-control' ]) !!}
+                                    </div><!-- /.form-group currency -->
                                  <!----------------start  logo-->
                                     <div class="input-group ">
                                         <div class="custom-file">

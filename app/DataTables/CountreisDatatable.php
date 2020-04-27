@@ -108,9 +108,9 @@ class CountreisDatatable extends DataTable
                 'data'  => 'code',
                  'title' => trans('admin.code_show'),
             ],[
-                'name'  => 'code',
-                'data'  => 'code',
-                 'title' => trans('admin.code'),
+                'name'  => 'currency',
+                'data'  => 'currency',
+                 'title' => trans('admin.currency'),
             ],[
                 'name'  => 'mob',
                 'data'  => 'mob',

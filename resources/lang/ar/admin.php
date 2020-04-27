@@ -130,11 +130,13 @@ return [
     'create_countreis'            => ' اضافه دوله ',
     'country_name_ar'     => ' اسم الدولة عربى ',
     'country_name_en'     => ' اسم الدولة انجليزى ',
+    'currency'     => '   العملة   ',
     'mob'     => '   الموبايل   ',
     'mob_show'     => ' الموبايل ',
+    'code_show'     => ' كود الدولة ',
     'code'     => ' الكود ',
-    'logo_countreis'     => ' اختارعلم / شعار الدوله ',
-    'custom_logo_countreis'     => 'شعار الدوله ',
+    'logo_countreis'     => ' اختارعلم / شعار الدولة ',
+    'custom_logo_countreis'     => 'شعار الدولة ',
     'create_new_countreis'     => ' اضافه دوله جديده  ',
 
     // start departments
@@ -147,7 +149,7 @@ return [
     'description'                  => 'الوصف',
     'keyword'                      => 'الكلمات الدليلية',
     'icon_departments'     => ' صوره القسم ',
-    'custom_icon_departments'     => 'شعار الدوله ',
+    'custom_icon_departments'     => 'شعار الدولة ',
     'create_new_departments'     => ' اضافه قسم جديد ',
     'page_create_departments'     => 'صفحه اضافه الاقسام',
     // start departments
@@ -157,39 +159,8 @@ return [
 
 
 
-
-
-    // start products
-    'products'                  => 'المنتجات',
-    'product'                  => ' المنتج',
-    'product_name_ar'                  => '     اسم المنتج با العربيه   ',
-    'product_name_en'                  => '     اسم المنتج با بالانجليزية   ',
-    'photo_product'             => '  صوره المنتج ',
-    'photo_products'             => '  صوره المنتج ',
-    'add_by_photo_products'             => '  صوره  من قبل من   ',
-    'add_by_ar'             => '  صوره  من قبل عربى    ',
-    'add_by_en'             => '  صوره  من قبل انجليزى     ',
-    'discount'             => '  خصم  ',
-    'create_new_product'     => ' اضافه منتج جديد ',
-    'create_new_products'     => ' اضافه منتج جديد ',
-    'page_create_product'     => 'صفحه اضافه المنتجات',
-    'price'                  => ' السعر ',
-    'price_old'                  => ' السعر القديم  ',
-    'description_ar'                  => '  الوصف عربى     ',
-    'description_en'                  => '  الوصف انجليزى      ',
-    'price_old'                  => ' السعر القديم  ',
-
     // start departments
     'add_product_in_th_dep'     => ' اضافه منتج  فى هذا القسم  ',
-
-
-
-
-
-
-
-
-
 
     // start slider
 
@@ -262,13 +233,13 @@ return [
      'page_create_trademarks'     => 'صفحه اضافه دوله',
     'create_trademarks'            => ' اضافه دوله ',
     'mob'                           => '  الموب ',
-//     'logo_trademarks'     => ' اختارعلم / شعار الدوله ',
+//     'logo_trademarks'     => ' اختارعلم / شعار الدولة ',
     'logo'     => 'الشعار ',
     'create_new_trademarks'     => ' اضافه  علامه ت جديده  ',
 
     // start manufacts
     'manufacts'            =>' 	 المصنعين',
-    'logo_manufacts'            =>' 	رمز  الشركه',
+    'logo_manufacts'            =>' 	رمز  الشركة',
     'page_create_manufacts'     => 'صفحه اضافه مصنع ',
     'create_manufacts'            => ' اضافه دوله ',
     'mob'                           => '  الموب ',
@@ -285,10 +256,10 @@ return [
     // start shipping
 
     'shipping'            =>' شركات الشحن ',
-    'logo_shipping'            =>' 	  رمز  الشركه ',
-    'page_create_shipping'     => ' صفحه اضافه شركه ش',
-    'create_trademarks'            => ' اضافه شركه شحن ',
-    'create_new_shipping'     => 'اضافه   شركه ش جديده',
+    'logo_shipping'            =>' 	  رمز  الشركة ',
+    'page_create_shipping'     => ' صفحه اضافه شركة ش',
+    'create_trademarks'            => ' اضافه شركة شحن ',
+    'create_new_shipping'     => 'اضافه   شركة ش جديده',
     'owner'     => 'المالك',
 
     // start mall
@@ -297,7 +268,7 @@ return [
     'page_create_mall'     => ' صفحه اضافه مول  ',
     'create_mall'          => ' اضافه مول ',
     'create_new_mall'      => 'اضافه   مول جديد',
-    'country_id'      => '  الدوله ',
+    'country_id'      => '  الدولة ',
     'you_did_not_locate'      => '    لم تقوم بتحديد مكان   على الخريطه       ',
     // start color
     'color'                 =>'الالون   ',
@@ -326,6 +297,64 @@ return [
     'create_flavor'          => ' اضافه نكهه ',
     'create_new_flavor'      => 'اضافه   نكهه جديد',
     'is_public_flavor'      => ' نكهه عامه      ',
+
+
+
+    // start products
+    'products'                  => 'المنتجات',
+    'product'                  => ' المنتج',
+    'product_name_ar'                  => '     اسم المنتج با العربيه   ',
+    'product_name_en'                  => '     اسم المنتج با بالانجليزية   ',
+    'photo_product'             => '  صوره المنتج ',
+    'photo_products'             => '  صوره المنتج ',
+    'add_by_photo_products'             => '  صوره  من قبل من   ',
+    'add_by_ar'             => '  صوره  من قبل عربى    ',
+    'add_by_en'             => '  صوره  من قبل انجليزى     ',
+    'discount'             => '  خصم  ',
+    'create_new_product'     => ' اضافه منتج جديد ',
+    'create_new_products'     => ' اضافه منتج جديد ',
+    'page_create_product'     => 'صفحه اضافه المنتجات',
+    'price'                  => ' السعر ',
+    'price_old'                  => ' السعر القديم  ',
+    'description_ar'                  => '  الوصف عربى     ',
+    'description_en'                  => '  الوصف انجليزى      ',
+    'price_old'                  => ' السعر القديم  ',
+// ----------------start virgin two in products
+    'create-product'                =>'اضافه منتج ',
+    'product_media'                =>'الوسائط',
+    'product_info'                 =>' معلومات المنتج',
+    'product_setting'              =>' اعدادات المنتج',
+    'product_content'              =>'   محتوى  المنتج',
+    'product_size_weight'          =>' ا معلومات الشحن ',
+    'product_other_data'           =>'معلومات إضافية',
+    'create_products'              =>'اضافه منتج',
+    'save_continue'                =>' حفظ واستمرار',
+    'copy_products'                =>'   نسخ المنتج  ',
+    'department'                   =>'    القسم    ',
+    'create_or_edit_product'       =>'اضافه او تعديا المنتج :title ',
+    'title'                       =>' العنوان',
+    'product_title'                =>'  عنوان المنتج',
+    'product_content'              =>' تفصيل المنج',
+    'price'                        =>' السعر',
+    'stock'                        =>' الكميه',
+    'start_at'                       =>'  يبداء فى ',
+    'end_at'                         =>' نتهى فى ',
+    'price_offer'                    =>'سعر العرض الخاص',
+    'status'                         =>' الحاله ',
+    'pending'                        =>' فى ال انتظار ',
+    'refused'                        =>'مرفوض',
+    'active'                         =>'  مفعل ',
+    'start_offer_at'                 =>'  بديه تاريخ بدايه العرض الخاص بلمنتج  ',
+    'end_offer_at'                   =>'   تاريخ نهايه العرض ',
+    'refused_reason'                 =>' سبب ال رفض',
+    'mainphoto'                      =>' للمنتج الصوره الرئيسه',
+    'other_files'                    =>'    صور او   او ملفات اخرى للمنتج  ',
+    'size_id'                        =>' نوع المقاس',
+    'size'                           =>'المقاس',
+    'weight_id'                      =>' نوع الحجم ',
+    'weight'                         =>'الحجم',
+    'photos'                         =>' صور المنتج',
+
 
 //puplic lang
     'select_dep'      => ' حداد القسم      ',
