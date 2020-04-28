@@ -17,8 +17,6 @@ class ProductsController extends Controller
     {
        return $products->render('back.products.index',['title'=>trans('admin.products')]);
     }
-
-
     public function getAddEditRemoveColumn()
     {
         return view('datatables.eloquent.add-edit-remove-column');
@@ -45,10 +43,16 @@ class ProductsController extends Controller
      */
     public function create()
     {
-       return view('back.products.create',['title'=>trans('admin.create-product')]);
+        $products =  Product::create([
+        'product_name_ar'=>'',
+         ]);
 
+        if(!empty($products))
+        {
+
+            return redirect(aurl('products/'.$products->id.'/edit'));
+        }
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -112,85 +116,12 @@ class ProductsController extends Controller
          return redirect('admin/products');
 
     }
-    public function quick_store(Request $request)
-    {
-              $data =$this->validate(request(),[
-            'product_name_ar'          =>'required',
-            'product_name_en'          =>'required',
-            'description_ar'           =>'required',
-            'description_en'           =>'required',
-            'department_id'            =>'required',
-            'add_by_ar'                =>'sometimes|nullable',
-            'add_by_en'                =>'sometimes|nullable',
-            'discount'                 =>'sometimes|nullable',
-            'price_offer'              =>'sometimes|nullable',
-            'price_old'                =>'sometimes|nullable',
-            'price'                    =>'sometimes|nullable',
-            'add_by_photo'             =>'sometimes|nullable|'.v_image(),
-            'photo'                    =>'required|'.v_image(),
 
 
-         ],[
-            'product_name_ar'          =>trans('admin.product_name_ar'),
-            'product_name_en'          =>trans('admin.product_name_en'),
-            'description_ar'           =>trans('admin.description_ar'),
-            'description_en'           =>trans('admin.description_en'),
-            'department_id'            =>trans('admin.department_id'),
-            'add_by_ar'                =>trans('admin.add_by_ar'),
-            'add_by_en'                =>trans('admin.add_by_en'),
-            'add_by_photo'             =>trans('admin.add_by_photo'),
-            'discount'                 =>trans('admin.discount'),
-            'price_offer'              =>trans('admin.price_offer'),
-            'price_old'                =>trans('admin.price_old'),
-            'price'                    =>trans('admin.price'),
-            'photo'                    =>trans('admin.photo'),
-     
-        ],[
-
-        ]);
-        if(request()->hasFile('photo')){
-                        $data['photo']    = Up()->Upload([
-                        'file'            =>'photo',
-                        'path'            =>'products',
-                        'upload_type'     =>'single',
-                        'delete_file'          =>'',
-
-                     ]);
-                }
-                  if(request()->hasFile('add_by_photo')){
-                        $data['add_by_photo']  = Up()->Upload([
-                        'file'                 =>'add_by_photo',
-                        'path'                 =>'products',
-                        'upload_type'          =>'single',
-                        'delete_file'          =>'',
-
-                     ]);
-                }
-        Product::Create($data);
-        session()->flash('successhome', trans('admin.record_added') );
-        return back();
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
- 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-
-        $products = Product::find($id);
-        $title = trans('admin.edit');
-         return view('back.products.edit',compact('products','title'));
+         $products = Product::find($id);
+         return view('back.products.product',['title'=>trans('admin.create_or_edit_product',['title'=>$products->product_name_ar]),'products'=>$products]);
     }
         public function show($id)
     {

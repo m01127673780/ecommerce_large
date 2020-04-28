@@ -321,11 +321,11 @@ return [
     'price_old'                  => ' السعر القديم  ',
 // ----------------start virgin two in products
     'create-product'                =>'اضافه منتج ',
-    'product_media'                =>'الوسائط',
+    'product_media'                =>'   وسائط المنتج',
     'product_info'                 =>' معلومات المنتج',
     'product_setting'              =>' اعدادات المنتج',
     'product_content'              =>'   محتوى  المنتج',
-    'product_size_weight'          =>' ا معلومات الشحن ',
+    'product_size_weight'          =>'  معلومات الشحن ',
     'product_other_data'           =>'معلومات إضافية',
     'create_products'              =>'اضافه منتج',
     'save_continue'                =>' حفظ واستمرار',

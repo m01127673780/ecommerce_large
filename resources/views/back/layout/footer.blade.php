@@ -104,7 +104,10 @@
 {{----------- End  in  net server   --------------}}
 
 <!-- datatables -->
-<!-- ---------------------------------------- -->
+<!-- -----------start datepicker ----------------------------- -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ar.min.js"></script>
+<!-- -----------end  datepicker ----------------------------- -->
 
 <!-- End datatables -->
 

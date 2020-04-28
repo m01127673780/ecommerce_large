@@ -30,13 +30,13 @@
  
     
      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e7d3c9b10594cb9"></script>
- 
-                       
-                       
-                       
-                       
-                       
-                       
+
+
+
+
+
+
+
                        
                        
                        
@@ -97,6 +97,10 @@
     <link rel="stylesheet" href="{{url('design/adminlte')}}/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- start  datepicker-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!-- End   datepicker-->
+
 
         <link rel="stylesheet" href="{{url('design/adminlte')}}/dist/css/style-ltr.css">
  @if(direction()=='ltr')
@@ -254,7 +258,16 @@ FB.ui({
    /*background: #302929;*/
    border: 1px solid #fff
 }
+
            /*-------End      products---------*/
+           /*-------start       plugins ---------*/
+        /*<!-- start  datepicker -->*/
+             .datepicker td, .datepicker th {
+                  width: 36px!important;
+             }
+        /*<!-- End   datepicker-->*/
+
+        /*-------End        plugins ---------*/
     </style>
 {{--    ---------------------------------End  virgin 3 my custom css 3---------------}}
 
