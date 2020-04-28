@@ -1,4 +1,4 @@
- <div id="department" class="container tab-pane active"><br>
+ <div id="department" class="container tab-pane  "><br>
                                                        <h3>{{ trans('admin.department') }}</h3>
                                                        <aside class="content_tab_info  tab_department">
                                                            <!-- --------------------------------------------------------------------------------------------------- -->

@@ -38,11 +38,6 @@
                   Route::delete('departments/destroy/all', 'DepartmentsController@multi_delete');
                   Route::resource('departments', 'DepartmentsController');
                   Route::post('departments/create_quick', 'DepartmentsController@quick_store');
- 
-                  // start products Route
-                  Route::delete('products/destroy/all', 'ProductsController@multi_delete');
-                  Route::resource('products', 'ProductsController');
-                  Route::post('products/create_quick', 'ProductsController@quick_store');
 
 
                   // start Trademarks Route
@@ -114,6 +109,11 @@
 
 
 
+
+                  // start products Route
+                  Route::delete('products/destroy/all', 'ProductsController@multi_delete');
+                  Route::resource('products', 'ProductsController');
+                  Route::post('upload/image/{pid}', 'ProductsController@upload_file');
 
 
 

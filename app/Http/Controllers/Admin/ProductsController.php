@@ -91,7 +91,7 @@ class ProductsController extends Controller
             'price_old'                =>trans('admin.price_old'),
             'price'                    =>trans('admin.price'),
             'photo'                    =>trans('admin.photo'),
-     
+
         ],[
 
         ]);
@@ -138,6 +138,25 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+//----------------------------------------
+
+
+    public function upload_file($id) {
+        if (request()->hasFile('file')) {
+            return    up()->upload([
+                'file'        => 'file',
+                'path'        => 'products/'.$id,
+                'upload_type' => 'files',
+                'file_type'   => 'product',
+                'relation_id' =>  $id ,
+            ]);
+         }
+
+
+    }
+//----------------------------------------
+
     public function update(Request $request, $id)
     {
              $data =$this->validate(request(),[
@@ -168,7 +187,7 @@ class ProductsController extends Controller
             'price_old'                =>trans('admin.price_old'),
             'price'                    =>trans('admin.price'),
             'photo'                    =>trans('admin.photo'),
-     
+
         ],[
         ]);
         if(request()->hasFile('photo')){
@@ -210,7 +229,7 @@ class ProductsController extends Controller
     {
         if(is_array(request('item'))){
             // Product::destroy(request('item'));
-            foreach (request('item') as $id) 
+            foreach (request('item') as $id)
             {
                 $products =  Product::find($id);
                 Storage::delete($products->logo);

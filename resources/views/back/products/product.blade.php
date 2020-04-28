@@ -27,7 +27,7 @@
                                                <!-- Nav tabs -->
                                        <ul class="nav nav-tabs" role="tablist">
                                  <li class="nav-item">
-                                     <a class="nav-link active" data-toggle="tab" href="#department">{{ trans('admin.department') }}
+                                     <a class="nav-link " data-toggle="tab" href="#department">{{ trans('admin.department') }}
                                        <i class="fa fa-align-right"></i>  </a>
                                  </li>
 
@@ -40,7 +40,7 @@
                                      <i class="fas fa-cogs  "></i> </a>
                                  </li>
                                  <li class="nav-item">
-                                     <a class="nav-link" data-toggle="tab" href="#product_media">{{ trans('admin.product_media') }}
+                                     <a class="nav-link active" data-toggle="tab" href="#product_media">{{ trans('admin.product_media') }}
                                    <i class="fas fa-photo-video"></i>    </a>
                                  </li>
 
@@ -59,12 +59,12 @@
                                                <div class="tab-content">
 
 
-@include('back.products.tabs.department')
-@include('back.products.tabs.product_setting')
+{{--@include('back.products.tabs.department')--}}
+{{--@include('back.products.tabs.product_setting')--}}
 @include('back.products.tabs.product_media')
-@include('back.products.tabs.product_info')
-@include('back.products.tabs.product_size_weight')
-@include('back.products.tabs.product_other_data')
+{{--@include('back.products.tabs.product_info')--}}
+{{--@include('back.products.tabs.product_size_weight')--}}
+{{--@include('back.products.tabs.product_other_data')--}}
 
 
                                                </div> <!-- Tab content start  -->

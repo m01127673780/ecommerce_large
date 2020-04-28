@@ -358,6 +358,7 @@ return [
 
 //puplic lang
     'select_dep'      => ' حداد القسم      ',
+    'click_here_to_upload_files'      => ' اضغط هنا لرفع الملفات او قم بسحب الملفات وادرجه هنا      ',
 
 ];
 

@@ -344,6 +344,7 @@
 //puplic lang
         'select_dep'      => ' select department      ',
 
+        'click_here_to_upload_files'      => ' Click here to upload files, or check out the files and insert it here     ',
 
 
     ];
