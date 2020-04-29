@@ -19,6 +19,19 @@
                         dictRemoveFile:"{{ trans('admin.delete') }} ",
                         params:{
                             _token:'{{csrf_token() }}'
+                        },
+                        init:function() {
+                                    @foreach($products->files()->get() as  $file)
+                            var mock = {
+                                    name: '{{ $file->file_type}}',
+                                    fid: '{{ $file->id}}',
+                                    size: '{{ $file->size}}',
+                                    type: '{{ $file->mime_type}}'
+                                };
+                            this.emit('addedfile', mock);
+                            this.options.thumbnail.call(this, mock, '{{ url('public/storage/'.$file->full_file) }}');
+
+                            @endforeach
                         }
                     });
                 });
@@ -36,4 +49,29 @@
     .dropzone .dz-preview.dz-image-preview {
         background: transparent!important;
     }
+    .dropzone .dz-preview .dz-image img {
+
+        width: 100%;
+        height: 100%;
+
+    }
+    .dropzone .dz-preview .dz-image {
+
+        z-index: 99999!important;
+    }
+    .dropzone .dz-preview:hover .dz-image img {
+        -webkit-transform: scale(1.05, 1.05);
+        -moz-transform: scale(1.05, 1.05);
+        -ms-transform: scale(1.05, 1.05);
+        -o-transform: scale(1.05, 1.05);
+        transform: scale(1.05, 1.05);
+        -webkit-filter:  brightness(0.5);
+        filter:  brightness(0.5) !important;
+
+    }
+    /*.dropzone .dz-preview .dz-image img*/
+    /*{*/
+    /*    width: 150px!important;*/
+    /*    height: 150px!important;*/
+    /* }*/
 </style>
