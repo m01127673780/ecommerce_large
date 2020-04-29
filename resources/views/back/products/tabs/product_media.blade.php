@@ -20,6 +20,20 @@
                         params:{
                             _token:'{{csrf_token() }}'
                         },
+                        addRemoveLinks:true,
+                        removedfile:function(file)
+                        {
+                            //alert(file.fid);
+                            $.ajax({
+                                dataType: 'json',
+                                type: 'post',
+                                url: '{{ aurl('delete/image') }}',
+                                data: {_token: '{{csrf_token() }}', id: file.fid}
+                            });
+
+                            var fmok;
+                            return (fmok = file.previewElement) !=null ? fmok .parentNode.removeChild(file.previewElement):void 0;
+                                },
                         init:function() {
                                     @foreach($products->files()->get() as  $file)
                             var mock = {
@@ -74,4 +88,25 @@
     /*    width: 150px!important;*/
     /*    height: 150px!important;*/
     /* }*/
+
+
+
+    .dropzone .dz-preview .dz-remove {
+        font-size: 14px;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+        border: none;
+        color: #fff;
+        margin-top: 10px;
+    }
 </style>
+
+@push('js')
+<script>
+$(document).ready(function(){
+    $('.dropzone .dz-preview .dz-remove ').addClass('btn btn-danger');
+
+});
+</script>
+@endpush

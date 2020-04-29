@@ -139,9 +139,7 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-//----------------------------------------
-
-
+//---------------------------------------- upload
     public function upload_file($id) {
         if (request()->hasFile('file')) {
             return    up()->upload([
@@ -152,9 +150,13 @@ class ProductsController extends Controller
                 'relation_id' =>  $id ,
             ]);
          }
-
-
-    }
+    }//End upload
+//----------------------------------------  delete
+    public function delete_file() {
+        if (request()->has('id')) {
+            up()->delete(request('id'));
+        }
+    }//End delete_file
 //----------------------------------------
 
     public function update(Request $request, $id)

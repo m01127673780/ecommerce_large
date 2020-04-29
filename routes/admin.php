@@ -114,6 +114,7 @@
                   Route::delete('products/destroy/all', 'ProductsController@multi_delete');
                   Route::resource('products', 'ProductsController');
                   Route::post('upload/image/{pid}', 'ProductsController@upload_file');
+                  Route::post('delete/image', 'ProductsController@delete_file');
 
 
 
