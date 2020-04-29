@@ -159,7 +159,7 @@ if (!function_exists('active_menu')){
 if (!function_exists('v_image')){
     function  v_image($ext=null){
         if ($ext === null){
-            return'image|mimes:jpg,jpeg,png,gif,bmp';
+            return'image|mimes:jpg,jpeg,png,gif,bmp,webp';
         }else{
             return'image|mimes:'.$ext;
         }

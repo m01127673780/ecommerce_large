@@ -68,13 +68,22 @@
                                     <div class="clearfix"></div>
                                     <!--  start js tree ----------------------------------- -->
                                     <div class="form-group">
-                                        {!! Form::label('description',trans('admin.description')) !!}
-                                        {!! Form::textarea('description',$department->description,['class'=>'form-control','class'=>'form-control' ]) !!}
-                                    </div><!-- /.form-group description -->
+                                        {!! Form::label('description_ar',trans('admin.description_ar')) !!}
+                                        {!! Form::textarea('description_ar',$department->description_ar,['class'=>'form-control','class'=>'form-control' ]) !!}
+                                    </div><!-- /.form-group description_ar -->
                                     <div class="form-group">
-                                        {!! Form::label('keyword',trans('admin.keyword')) !!}
-                                        {!! Form::textarea('keyword',$department->keyword,['class'=>'form-control','class'=>'form-control' ]) !!}
-                                    </div><!-- /.form-group keyword -->
+                                        {!! Form::label('description_en',trans('admin.description_en')) !!}
+                                        {!! Form::textarea('description_en',$department->description_en,['class'=>'form-control','class'=>'form-control' ]) !!}
+                                    </div><!-- /.form-group description_en -->
+                                    <div class="form-group">
+                                        {!! Form::label('keyword_ar',trans('admin.keyword_ar')) !!}
+                                        {!! Form::textarea('keyword_ar',$department->keyword_ar,['class'=>'form-control','class'=>'form-control' ]) !!}
+                                    </div><!-- /.form-group keyword_ar -->
+                                    <div class="form-group">
+                                        {!! Form::label('keyword_en',trans('admin.keyword_en')) !!}
+                                        {!! Form::textarea('keyword_en',$department->keyword_en,['class'=>'form-control','class'=>'form-control' ]) !!}
+                                    </div><!-- /.form-group keyword_en -->
+
                                     <!----------------start  icon-->
                                     <div class="input-group ">
                                         <div class="custom-file">

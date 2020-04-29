@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Model\Product;
+use App\Model\Size;
+use App\Model\Weight;
 use App\DataTables\ProductsDatatable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -131,13 +133,18 @@ class ProductsController extends Controller
          return view('back.products.edit',compact('products','title'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+//prepare_wight_size
+    public function prepare_wight_size()
+    {
+        if(request()->ajax() and request()->has('dep_id')){
+            $sizes = Size::Where('department_id',request('dep_id'))->pluck('name_' . session('lang'), 'id');
+
+            $weights = Weight::pluck('name_'.session('lang'), 'id');
+            return view('back.products.ajax.size_weight', ['sizes'=> $sizes,'weights' => $weights])->render();
+        }else{
+            return 'رجاء  اختيار قسم';
+        }
+    }
     //-----------------------------------Upload  main img
     public function update_Product_image ($id) {
         $products = Product::where('id',$id)->update([

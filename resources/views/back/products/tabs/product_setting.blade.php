@@ -12,9 +12,7 @@
 
                                                                        }else{
                                                                            $('.reason').addClass('hidden');
-
                                                                        }
-
                                                                    });
                                                                    $('.datepicker').datepicker({
                                                                        rtl:'{{ session('lang')=='ar'?true:false}}',
@@ -27,7 +25,6 @@
                                                                    });
                                                                </script>
                                                            @endpush
-
                                                            <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                {!! Form::label('price',trans('admin.price')) !!}
                                                                {!! Form::text('price',$products->price,['class'=>'form-control ','placeholder'=>trans('admin.price')]) !!}

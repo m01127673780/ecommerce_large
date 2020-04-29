@@ -59,12 +59,12 @@
                                                <div class="tab-content">
 
 
-{{--@include('back.products.tabs.department')--}}
-{{--@include('back.products.tabs.product_setting')--}}
+@include('back.products.tabs.department')
+@include('back.products.tabs.product_setting')
 @include('back.products.tabs.product_media')
-{{--@include('back.products.tabs.product_info')--}}
-{{--@include('back.products.tabs.product_size_weight')--}}
-{{--@include('back.products.tabs.product_other_data')--}}
+@include('back.products.tabs.product_info')
+@include('back.products.tabs.product_size_weight')
+@include('back.products.tabs.product_other_data')
 
 
                                                </div> <!-- Tab content start  -->
