@@ -1,5 +1,5 @@
 <div id="product_media" class="container container tab-pane active"><br>
-    <center><h4>{{ trans('admin.product_media') }}</h4> </center>
+     <h4>{{ trans('admin.product_media') }}</h4>
     <aside class="content_tab_info  tab_product_media">
         @php use App\File; @endphp
         @push('js')
@@ -7,6 +7,7 @@
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
             <script type="text/javascript">
                 Dropzone.autoDiscover = false;
+            //  ------------------------------start sub photos  producte
                 $(document).ready(function () {
                     $('#dropzonefileupload').dropzone({
                         url:"{{ aurl('upload/image/'.$products->id) }}",
@@ -33,7 +34,7 @@
 
                             var fmok;
                             return (fmok = file.previewElement) !=null ? fmok .parentNode.removeChild(file.previewElement):void 0;
-                                },
+                        },
                         init:function() {
                                     @foreach($products->files()->get() as  $file)
                             var mock = {
@@ -46,23 +47,84 @@
                             this.options.thumbnail.call(this, mock, '{{ url('public/storage/'.$file->full_file) }}');
 
                             @endforeach
-                            {{---------------------------------------}}
+                                    {{---------------------------------------}}
 
                                 this.on('sending',function(file,xhr,formData){
-                                        formData.append('fid','');
-                                        file.fid = '';
-                                       });
-                                        this.on('success',function(file,response){
-                                            file.fid = response.id;
-                                        });
+                                formData.append('fid','');
+                                file.fid = '';
+                            });
+                            this.on('success',function(file,response){
+                                file.fid = response.id;
+                            });
 
                             {{---------------------------------------}}
                         }
                     });
+            //  ------------------------------End   sub phoths  producte
+
+
+
+
+
+                //  ------------------------------start main  photo  producte
+                $('#mainphoto').dropzone({
+                    url:"{{ aurl('update/image/'.$products->id) }}",
+                    paramName:'file',
+                    uploadMultiple:false,
+                    maxFiles:1,
+                    maxFilessaze:3, //M B
+                    acceptedFiles:'image/*',
+                    dictDefaultMessage:' {{trans('admin.mainphoto')}}',
+                    dictRemoveFile:"{{ trans('admin.delete') }} ",
+                    params:{
+                        _token:'{{csrf_token() }}'
+                    },
+                    addRemoveLinks:true,
+                    removedfile:function(file)
+                    {
+                        //alert(file.fid);
+                        $.ajax({
+                            dataType:'json',
+                            type:'post',
+                            url:'{{ aurl('delete/product/image/'.$products->id) }}',
+                            data:{_token:'{{csrf_token() }}'}
+
+                        });
+                        var fmok;
+                        return (fmok = file.previewElement) !=null ? fmok .parentNode.removeChild(file.previewElement):void 0;
+                    },
+
+                    init:function(){
+                                @if(!empty($products->photo))
+                        var mock={name:'{{ $products->title}}',size:'',type:''};
+                        this.emit('addedfile',mock);
+                        this.options.thumbnail.call(this,mock,'{{ url('public/storage/'.$products->photo) }}') ;
+                        $('.dz-progress').remove();
+                        @endif
+                            this.on('sending',function(file,xhr,formData){
+
+                            formData.append('fid','');
+                            file.fid = '';
+                        });
+                        this.on('success',function(file,response){
+                            file.fid = response.id;
+                        });
+                    }
                 });
+
+
+
+
+                });
+
+                //  ------------------------------End   main photh  producte
+
             </script>
         @endpush
-        <div class="dropzone" id="dropzonefileupload"> </div>
+        <center> <h3>{{trans('admin.mainphoto')}}</h3> </center>
+        <div class="dropzone" id="mainphoto"></div>
+        <hr><center> <h3>{{trans('admin.photos')}}</h3> </center>
+        <div class="dropzone sup_img_dropzone" id="dropzonefileupload"> </div>
     </aside><!--content_tab_info product_media-->
 </div>
 <style>

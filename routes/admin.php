@@ -117,6 +117,12 @@
                   Route::post('delete/image', 'ProductsController@delete_file');
 
 
+                   Route::post('update/image/{pid}', 'ProductsController@update_Product_image');
+                  Route::post('delete/product/image/{pid}', 'ProductsController@delete_main_image');
+//                  Route::post('load/wight/size', 'ProductsController@prepare_wight_size');
+
+
+
 
 
 

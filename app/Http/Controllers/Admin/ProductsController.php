@@ -138,7 +138,28 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    //-----------------------------------Upload  main img
+    public function update_Product_image ($id) {
+        $products = Product::where('id',$id)->update([
+            'photo'=> up()->upload([
+                'file'        => 'file',
+                'path'        => 'products/'.$id.'/main_image',
+                'upload_type' => 'single',
+                'delete_file' => '',
+            ]),
+        ]);
+        //'photo' => $products->photo
+        return response(['status' => true, ], 200);
+    }
+    //---------------------------------------- delete main img
+    public function delete_main_image($id) {
+        $products = Product::find($id);
+        Storage::delete($products->photo);
+        $products->photo = null;
+        $products->save();
+        // 'id' => $fid],
+        return response(['status' => true], 200);
+    }
 //---------------------------------------- upload
     public function upload_file($id) {
         if (request()->hasFile('file')) {

@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('product_name_en')->nullable();
             $table->longText('description_ar')->nullable();
             $table->longText('description_en')->nullable();
+            $table->text('photo')->nullable();
             $table->text('add_by_ar')->nullable();
             $table->text('add_by_en')->nullable();
             $table->string('add_by_photo')->nullable();
