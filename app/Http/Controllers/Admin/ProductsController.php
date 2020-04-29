@@ -142,14 +142,16 @@ class ProductsController extends Controller
 //---------------------------------------- upload
     public function upload_file($id) {
         if (request()->hasFile('file')) {
-            return    up()->upload([
+             $fid =    up()->upload([
                 'file'        => 'file',
                 'path'        => 'products/'.$id,
                 'upload_type' => 'files',
                 'file_type'   => 'product',
                 'relation_id' =>  $id ,
             ]);
-         }
+            return response(['status' => true, 'id' => $fid], 200);
+
+        }
     }//End upload
 //----------------------------------------  delete
     public function delete_file() {

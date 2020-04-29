@@ -46,6 +46,17 @@
                             this.options.thumbnail.call(this, mock, '{{ url('public/storage/'.$file->full_file) }}');
 
                             @endforeach
+                            {{---------------------------------------}}
+
+                                this.on('sending',function(file,xhr,formData){
+                                        formData.append('fid','');
+                                        file.fid = '';
+                                       });
+                                        this.on('success',function(file,response){
+                                            file.fid = response.id;
+                                        });
+
+                            {{---------------------------------------}}
                         }
                     });
                 });

@@ -52,7 +52,8 @@ class Upload extends Controller {
                 'file_type'		=>  $data['file_type'],
                 'relation_id' 	=>  $data['relation_id'],
             ]);
-            return $data['path'].'/'. $hashname;
+           		return $add->id;
+
         }
 
 
