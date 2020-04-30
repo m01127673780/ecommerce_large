@@ -44,8 +44,20 @@
                                    <i class="fas fa-photo-video"></i>    </a>
                                  </li>
 
+                                <li class="nav-item">
+                                     <a class="nav-link" data-toggle="tab" href="#product_colors_flavors">
+                                         <i class="fas fa-paint-brush"></i>
+                                         {{ trans('admin.product_colors_flavors') }}
+                                    <i class="fab fa-pagelines"></i>
+                                     </a>
+                                 </li>
 
-                                     <li class="nav-item">
+
+
+{{--                                            {{ trans('admin.colors') }}<i class="fas  fa-paint-brush "></i>  </a>
+                                         {{ trans('admin.and') }}
+                                         {{ trans('admin.flavors') }}<i class="fab fa-gripfire"></i>--}}
+                                <li class="nav-item">
                                      <a class="nav-link" data-toggle="tab" href="#product_size_weight">{{ trans('admin.product_size_weight') }}
                                     <i class="fas fa-shipping-fast"></i>  </a>
                                  </li>
@@ -64,8 +76,8 @@
 @include('back.products.tabs.product_media')
 @include('back.products.tabs.product_info')
 @include('back.products.tabs.product_size_weight')
+@include('back.products.tabs.product_colors_flavors')
 @include('back.products.tabs.product_other_data')
-
 
                                                </div> <!-- Tab content start  -->
                                            </div><br>

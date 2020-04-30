@@ -355,11 +355,15 @@ return [
     'weight_id'                      =>' نوع الحجم ',
     'color_id'                      =>' اللون   ',
     'weight'                         =>'الحجم',
+    'colors'                         =>'الالون',
+    'flavor_id'                         =>'النكهات',
     'photos'                         =>' صور المنتج',
     'please_choose_a_section'        =>'      رجاء   قم باختيار قسم ! ',
+    'product_colors_flavors'                         =>' الالوان و النكهات ',
 
 
 //puplic lang
+    'and'      => '  و       ',
     'select_dep'      => ' حداد القسم      ',
     'click_here_to_upload_files'      => '      اضغط هنا لرفع الملفات او قم بسحب الملفات وإفلاته هنا  !    ',
 

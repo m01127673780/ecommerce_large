@@ -259,6 +259,17 @@ FB.ui({
    border: 1px solid #fff
 }
 
+        @media (max-width: 768px) {
+            .nav-tabs .nav-item {
+                margin-bottom: -1px;
+                display: inline-block;
+                font-size: 13px;
+                /* font-weight: bold; */
+                width: 156px;
+                /* text-align: right; */
+            }
+
+        }
            /*-------End      products---------*/
            /*-------start       plugins ---------*/
         /*<!-- start  datepicker -->*/

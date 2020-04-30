@@ -46,7 +46,8 @@
                        success: function(data)
                        {
                            $('.size_weight').html(data);
-                           $('.color_data').removeClass('hidden');
+                           $('.color_flavor_data').removeClass('hidden');
+                           $('.message_colors_flavors').addClass('hidden');
                        }
 
                    });

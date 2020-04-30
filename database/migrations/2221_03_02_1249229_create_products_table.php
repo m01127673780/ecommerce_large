@@ -39,8 +39,13 @@ class CreateProductsTable extends Migration
                 $table->integer('mall_id')->unsigned()->nullable();
                 $table->foreign('mall_id')->references('id')->on('malls')->onDelete('cascade');
             */
+            $table->string('color')->nullable();
             $table->integer('color_id')->unsigned()->nullable();
             $table->foreign('color_id')->references('id')->on('colors')->onDelete('cascade');
+
+            $table->string('flavor')->nullable();
+            $table->integer('flavor_id')->unsigned()->nullable();
+            $table->foreign('flavor_id')->references('id')->on('flavors')->onDelete('cascade');
 
 
             $table->string('size')->nullable();
