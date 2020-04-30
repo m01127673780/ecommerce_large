@@ -331,7 +331,7 @@ return [
     'save_continue'                =>' حفظ واستمرار',
     'copy_products'                =>'   نسخ المنتج  ',
     'department'                   =>'    القسم    ',
-    'create_or_edit_product'       =>'اضافه او تعديا المنتج :title ',
+    'create_or_edit_product'       =>'اضافه او تعديل او نسخ  المنتج   ',
     'title'                       =>' العنوان',
     'product_title'                =>'  عنوان المنتج',
     'product_content'              =>' تفصيل المنج',
@@ -353,8 +353,10 @@ return [
     'size_id'                        =>' نوع المقاس',
     'size'                           =>'المقاس',
     'weight_id'                      =>' نوع الحجم ',
+    'color_id'                      =>' اللون   ',
     'weight'                         =>'الحجم',
     'photos'                         =>' صور المنتج',
+    'please_choose_a_section'        =>'      رجاء   قم باختيار قسم ! ',
 
 
 //puplic lang

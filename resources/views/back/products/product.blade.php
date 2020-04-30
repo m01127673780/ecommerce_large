@@ -21,7 +21,7 @@
                                    <div class="row ">
                                        <!--container-->
                                        <div class="col-md-12" >
-                                         <h4>{{$title }}</h4> <br>
+                                         <h4>{{$title}}</h4> <br>
                           <aside class="content_buttons_save_continue_copy ">@include('back.products.btn.buttons_save_continue_copy')</aside><br> <br>
                                             <div class="container_contect_tabs">
                                                <!-- Nav tabs -->

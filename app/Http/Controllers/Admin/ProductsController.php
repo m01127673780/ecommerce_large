@@ -123,7 +123,7 @@ class ProductsController extends Controller
     public function edit($id)
     {
          $products = Product::find($id);
-         return view('back.products.product',['title'=>trans('admin.create_or_edit_product',['title'=>$products->product_name_ar]),'products'=>$products]);
+         return view('back.products.product',['title'=>trans('admin.create_or_edit_product'),'products'=>$products]);
     }
         public function show($id)
     {
@@ -137,14 +137,19 @@ class ProductsController extends Controller
     public function prepare_wight_size()
     {
         if(request()->ajax() and request()->has('dep_id')){
-            $sizes = Size::Where('department_id',request('dep_id'))->pluck('name_' . session('lang'), 'id');
-
+            $dep_list = array_diff( explode(',', get_parent(request('dep_id'))), [request('dep_id')]);
+            $size_1 = Size::Where('is_public','yes')->WhereIn('department_id', $dep_list)->pluck('name_' . session('lang'), 'id');
+            $size_2 = Size::Where('department_id',request('dep_id'))->pluck('name_' . session('lang'), 'id');
+            $sizes = array_merge(json_decode($size_1,true),json_decode($size_2,true));
+// return  $sizes ;
             $weights = Weight::pluck('name_'.session('lang'), 'id');
             return view('back.products.ajax.size_weight', ['sizes'=> $sizes,'weights' => $weights])->render();
         }else{
-            return 'رجاء  اختيار قسم';
+            return trans('admin.please_choose_a_section');
         }
     }
+
+
     //-----------------------------------Upload  main img
     public function update_Product_image ($id) {
         $products = Product::where('id',$id)->update([

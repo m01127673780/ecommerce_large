@@ -46,6 +46,7 @@
                        success: function(data)
                        {
                            $('.size_weight').html(data);
+                           $('.color_data').removeClass('hidden');
                        }
 
                    });
