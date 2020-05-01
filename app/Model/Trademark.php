@@ -12,4 +12,7 @@ class Trademark extends Model
         'code',
         'logo',
     ];
+//    public  function  trademarks(){
+//        return $this->hasMany('App\Model\Trademark','trade_id' ,'id');
+//    }
 }

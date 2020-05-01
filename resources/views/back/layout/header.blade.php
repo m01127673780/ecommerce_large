@@ -158,6 +158,9 @@ div.dataTables_wrapper div.dataTables_filter label {
     width: 20px;
     height: 20px;
 }
+.clearfix{
+    color:transparent;
+}
 /*{{--  End  public Style  --}}*/
 
   </style>
@@ -259,7 +262,12 @@ FB.ui({
    border: 1px solid #fff
 }
 
-        @media (max-width: 768px) {
+            .container_contect_tabs .nav-tabs .nav-link {
+                /* background: #302929; */
+                border: 1px solid #fff;
+                padding: 10px;
+            }
+         @media (max-width: 768px) {
             .nav-tabs .nav-item {
                 margin-bottom: -1px;
                 display: inline-block;

@@ -360,6 +360,10 @@ return [
     'photos'                         =>' صور المنتج',
     'please_choose_a_section'        =>'      رجاء   قم باختيار قسم ! ',
     'product_colors_flavors'                         =>' الالوان و النكهات ',
+    'product_malls_trademarks'                         =>'المولات و العلامات  ',
+    'product_malls_trademarks_title'                         =>'المولات و العلامات  التجاريه ',
+    'input_key'                         =>'عنوان الحقل  ',
+    'input_value'                         =>'محتوى الحقل  ',
 
 
 //puplic lang

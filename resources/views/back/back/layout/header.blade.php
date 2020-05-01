@@ -84,10 +84,10 @@
     <link rel="stylesheet" href="{{url('design/adminlte')}}/jstree/dist/jstree.checkbox.css">
 {{--    <link rel="stylesheet" href="{{url('design/adminlte')}}/jstree/dist/jstree.checkbox.css">--}}
 {{--    <link rel="stylesheet" href="{{url('design/adminlte')}}/jstree/dist/jstree.wholerow.css">--}}
+<!-- ------------------start select 2 ----------------->
+<!-- ------------------End   select 2 ----------------->
 
 
-
-       
 
      <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{url('design/adminlte')}}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -154,6 +154,9 @@ div.dataTables_wrapper div.dataTables_filter label {
     width: 20px;
     height: 20px;
 }
+.w_100_100{
+    width: 100%!important;
+ }
 /*{{--  End  public Style  --}}*/
 
   </style>
@@ -173,6 +176,15 @@ div.dataTables_wrapper div.dataTables_filter label {
 }
 /*End   section navbar */
 
+/*-----------------start select 2-----------*/
+.select2_single
+{
+    height: 40px!important;
+    width: 100%!important;;
+}
+ .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #000!important;
+/*-----------------start select 2-----------*/
 
             </style>
 

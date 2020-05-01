@@ -52,11 +52,14 @@
                                      </a>
                                  </li>
 
+                                           <li class="nav-item">
+                                               <a class="nav-link" data-toggle="tab" href="#product_malls_trademarks">
+                                                   <i class="fas fa-hospital "></i>
+                                                   {{ trans('admin.product_malls_trademarks') }}
+                                                   <i class="fab fa-free-code-camp"></i>
+                                               </a>
+                                           </li>
 
-
-{{--                                            {{ trans('admin.colors') }}<i class="fas  fa-paint-brush "></i>  </a>
-                                         {{ trans('admin.and') }}
-                                         {{ trans('admin.flavors') }}<i class="fab fa-gripfire"></i>--}}
                                 <li class="nav-item">
                                      <a class="nav-link" data-toggle="tab" href="#product_size_weight">{{ trans('admin.product_size_weight') }}
                                     <i class="fas fa-shipping-fast"></i>  </a>
@@ -77,6 +80,7 @@
 @include('back.products.tabs.product_info')
 @include('back.products.tabs.product_size_weight')
 @include('back.products.tabs.product_colors_flavors')
+@include('back.products.tabs.product_malls_trademarks')
 @include('back.products.tabs.product_other_data')
 
                                                </div> <!-- Tab content start  -->

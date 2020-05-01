@@ -17,7 +17,7 @@
                             <!-- /.----------------------------------------------------------------- -->
                                 <div class="box-body">
                                     {!! Form::open(['url'=>aurl('mall/create_quick'),'files'=>true]) !!}
-                                     <section class="form_modal_create">@include('back.mall.form.create')</section>
+{{--                                     <section class="form_modal_create">@include('back.mall.form.create')</section>--}}
                                     {!! Form::close() !!}
                                 </div><!-- box-body-->
                                 <!-- /.----------------------------------------------------------------- -->

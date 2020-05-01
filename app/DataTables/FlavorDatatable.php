@@ -107,11 +107,7 @@ class FlavorDatatable extends DataTable
                 'name'  => 'image',
                 'data'  => 'image',
                  'title' => trans('admin.icon_flavor'),
-            ],[
-                'name'  => 'color',
-                'data'  => 'color',
-                'title' => trans('admin.color'),
-            ], [
+            ],  [
                 'name'  => 'is_public',
                 'data'  => 'is_public',
                  'title' => trans('admin.is_public'),

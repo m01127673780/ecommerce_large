@@ -99,15 +99,7 @@ class ColorDatatable extends DataTable
                 'name'  => 'name_'.session('lang'),
                 'data'  => 'name_'.session('lang'),
                 'title' => trans('admin.name_'.session('lang')),
-            ],[
-                'name'  => 'image',
-                'data'  => 'image',
-                 'title' => trans('admin.color_color'),
-                'exportable' => false,
-                'printable'  => false,
-                'orderable'  => false,
-                'searchable' => false,
-            ],[
+            ], [
                 'name'  => 'color',
                 'data'  => 'color',
                  'title' => trans('admin.color'),

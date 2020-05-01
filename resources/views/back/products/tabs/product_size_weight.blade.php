@@ -8,7 +8,7 @@
         <div class="form-group col-md-12">
             <label form="color_id"  >{{trans('admin.color_id')}}</label>
             <div class="" >
-                {!! Form::select('color_id',App\Model\Color::pluck('name_'.lang(),'id'),$products->color_id,['class'=>'form-control','placeholder'=>trans('admin.color_id')])!!}
+                {!! Form::select('color_id',App\Model\Color::pluck('name_'.lang(),'id'),$products->color_id,['class'=>' select2 form-control','placeholder'=>trans('admin.color_id')])!!}
             </div>
         </div><!--form-group-->
     </div>

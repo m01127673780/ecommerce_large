@@ -102,15 +102,18 @@ class TrademarkDatatable extends DataTable
                 'name'  => 'name_'.session('lang'),
                 'data'  => 'name_'.session('lang'),
                 'title' => trans('admin.name_'.session('lang')),
-            ], [
-                'name'  => 'code',
-                'data'  => 'code',
-                 'title' => trans('admin.code'),
-            ],[
-                'name'  => 'mob',
-                'data'  => 'mob',
-                 'title' => trans('admin.mob_show'),
-            ],[
+            ],
+//            [
+//                'name'  => 'code',
+//                'data'  => 'code',
+//                 'title' => trans('admin.code'),
+//            ],[
+//                'name'  => 'mob',
+//                'data'  => 'mob',
+//                 'title' => trans('admin.mob_show'),
+//            ],
+
+            [
                 'name'  => 'image',
                 'data'  => 'image',
                  'title' => trans('admin.logo_trademarks'),
