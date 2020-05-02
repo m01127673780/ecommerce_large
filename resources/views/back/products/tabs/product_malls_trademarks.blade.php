@@ -57,34 +57,7 @@
             {!! Form::select('manu_id',App\Model\Manufact::pluck('name_'.lang(),'id'),$products->mall_id,['class'=>'select2 form-control','placeholder'=>trans('admin.manufacts')])!!}
         </div>
     </div><!--form-group-->
-        {{--start select to  malls --}}
-        @push('css')
-            <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
-            <link href="vendor/select2/dist/css/select2.min.css" rel="stylesheet" />
 
-        @endpush
-        @push('js')
-            <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-            <script src="vendor/select2/dist/js/select2.min.js"></script>
-            // In your Javascript (external .js resource or  tag)
-            <script>
-                $(document).ready(function() {
-                    $('.select2').select2();
-                    $('.select2_multiple').select2();
-
-                });
-            </script>
-            <style>
-                .select2-container--default .select2-selection--single {
-                     width: 100%!important;
-                    height: 40px!important;
-                 }
-                .select2-container--default .select2-selection--multiple .select2-selection__choice {
-                    background-color: #000 !important;
-
-                }
-            </style>
-        @endpush
 
 
 

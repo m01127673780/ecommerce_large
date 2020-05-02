@@ -1,5 +1,55 @@
 @extends('back.index')
 @section('content')
+    {{--start select to  malls --}}
+    @push('css')
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="vendor/select2/dist/css/select2.min.css" rel="stylesheet" />
+
+    @endpush
+    @push('js')
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+        <script src="vendor/select2/dist/js/select2.min.js"></script>
+        // In your Javascript (external .js resource or  tag)
+        <script>
+            $(document).ready(function() {
+                $('.select2').select2();
+            //------------------start save And continue
+                $(document).on('click','.save_and_continue',function(){
+                    var form_data = $('#product_form').serialize();
+                    $.ajax({
+                        url:'{{aurl('products/.$products->id')}}',
+                        dataType:'json',
+                        type:'post',
+                        data:form_data,
+                        beforeSend:function () {
+                            $('.loading_save_c').removeClass('hidden');
+                        },success:function () {
+                            $('.loading_save_c').addClass('hidden');
+
+                        },error(){
+                            $('.loading_save_c').addClass('hidden');
+
+                        }
+                     }); //ajax
+                    return false;
+                });//document on  save_and_continue
+                    //------------------End   save And continue
+
+            });//document ready
+        </script>
+
+    @endpush
+    <style>
+        .select2-container--default .select2-selection--single {
+            width: 100%!important;
+            height: 40px!important;
+        }
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #000 !important;
+
+        }
+    </style>
+{{--    ===================================================--}}
     <div class="wrapper">
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper content_wrapper_datatable">
@@ -17,12 +67,18 @@
                             <div class="card-body form_dark">
                             <!-- /.----------------------------------------------------------------- -->
                              <div class="box-body">
-                                     {!! Form::open(['url'=>aurl('products'),'files'=>true]) !!}
+                                     {!! Form::open(['url'=>aurl('products'),'files'=>true,'id'=>'product_form','method'=>'put']) !!}
                                    <div class="row ">
                                        <!--container-->
                                        <div class="col-md-12" >
                                          <h4>{{$title}}</h4> <br>
-                          <aside class="content_buttons_save_continue_copy ">@include('back.products.btn.buttons_save_continue_copy')</aside><br> <br>
+{{--                          <aside class="content_buttons_save_continue_copy ">@include('back.products.btn.buttons_save_continue_copy')</aside><br> <br>--}}
+                                           <aside class="  content_buttons_save_continue_copy ">
+                                               <a class="btn btn-primary save" href="">{{ trans('admin.save') }} <i class="fa fa-save "></i></a>
+                                               <a class="btn btn-info save_continue save_and_continue" href="">{{ trans('admin.save_continue') }} <i class="fa fa-save "></i> <i class="fa fa-spinner fa-spin hidden loading_save_c "> </i></a>
+                                               <a class="btn btn-success copy_products" href="">   {{ trans('admin.copy_products') }} <i class="fa fa-window-restore"></i></a>
+                                               <a class="btn btn-danger delete" href="">        {{ trans('admin.delete') }}      <i class="fa fa-trash"></i></a>
+                                           </aside>  <!--content_buttons_save_continue_copy-->
                                             <div class="container_contect_tabs">
                                                <!-- Nav tabs -->
                                        <ul class="nav nav-tabs" role="tablist">

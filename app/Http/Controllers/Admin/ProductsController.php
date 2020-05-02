@@ -194,6 +194,32 @@ class ProductsController extends Controller
     }//End delete_file
 //----------------------------------------
 
+/*
+   
+            //--------------start virgin two
+           
+            'trade_id',
+            'manu_id',
+            'flavor_id',
+            'flavor',
+            'color',
+            'color_id',
+            'size_id',
+            'size',
+            'currency_id',
+            'price',
+            'stock',
+            'start_at',
+            'end_at',
+            'start_offer_at',
+            'end_offer_at',
+            'price_offer',
+            'other_data',
+            'weight',
+            'weight_id',
+            'status',
+            'reason',
+*/
     public function update(Request $request, $id)
     {
              $data =$this->validate(request(),[
@@ -201,7 +227,7 @@ class ProductsController extends Controller
             'product_name_en'          =>'required',
             'description_ar'           =>'required',
             'description_en'           =>'required',
-            'department_id'            =>'sometimes|nullable',
+            'department_id'            =>'required',
             'add_by_ar'                =>'sometimes|nullable',
             'add_by_en'                =>'sometimes|nullable',
             'discount'                 =>'sometimes|nullable',
@@ -209,7 +235,31 @@ class ProductsController extends Controller
             'price_old'                =>'sometimes|nullable',
             'price'                    =>'sometimes|nullable',
             'add_by_photo'             =>'sometimes|nullable|'.v_image(),
-            'photo'                    =>'sometimes|nullable|'.v_image(),
+            'photo'                    =>'required|'.v_image(),
+            // ----------
+            'trade_id'                 =>'sometimes|nullable',
+            'manu_id'                  =>'sometimes|nullable',
+            'flavor_id'                =>'sometimes|nullable',
+            'flavor'                   =>'sometimes|nullable',
+            'color'                    =>'sometimes|nullable',
+            'color_id'                 =>'sometimes|nullable',
+            'size_id'                  =>'sometimes|nullable',
+            'size'                     =>'sometimes|nullable',
+            'currency_id'              =>'sometimes|nullable',
+            'start_at'                 =>'sometimes|nullable|date',
+            'end_at'                   =>'sometimes|nullable|date',
+            'start_offer_at'           =>'sometimes|nullable|date',
+            'end_offer_at'             =>'sometimes|nullable|date',
+            'price_offer'              =>'sometimes|nullable',
+            'other_data'               =>'sometimes|nullable',
+            'weight'                   =>'sometimes|nullable',
+            'weight_id'                =>'sometimes|nullable',
+            'status'                   =>'sometimes|nullable|in:pending,refused,active',
+            'reason'                   =>'sometimes|nullable',
+
+            'price'                    =>'required',
+            'stock'                    =>'required',
+
          ],[
             'product_name_ar'          =>trans('admin.product_name_ar'),
             'product_name_en'          =>trans('admin.product_name_en'),
@@ -224,6 +274,29 @@ class ProductsController extends Controller
             'price_old'                =>trans('admin.price_old'),
             'price'                    =>trans('admin.price'),
             'photo'                    =>trans('admin.photo'),
+            // ----------
+            'trade_id'                 =>trans('admin.trade_id'),
+            'manu_id'                  =>trans('admin.manu_id'),
+            'flavor_id'                =>trans('admin.flavor_id'),
+            'flavor'                   =>trans('admin.flavor'),
+            'color'                    =>trans('admin.color'),
+            'color_id'                 =>trans('admin.color_id'),
+            'size_id'                  =>trans('admin.size_id'),
+            'size'                     =>trans('admin.size'),
+            'currency_id'              =>trans('admin.currency_id'),
+            'start_at'                 =>trans('admin.start_at'),
+            'end_at'                   =>trans('admin.end_at'),
+            'start_offer_at'           =>trans('admin.start_offer_at'),
+            'end_offer_at'             =>trans('admin.end_offer_at'),
+            'price_offer'              =>trans('admin.price_offer'),
+            'other_data'               =>trans('admin.other_data'),
+            'weight'                   =>trans('admin.weight'),
+            'weight_id'                =>trans('admin.weight_id'),
+            'status'                   =>trans('admin.status'),
+            'reason'                   =>trans('admin.reason'),
+            'stock'                    =>trans('admin.stock'),
+  
+
 
         ],[
         ]);
