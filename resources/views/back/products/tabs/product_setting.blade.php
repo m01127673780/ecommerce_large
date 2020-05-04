@@ -38,12 +38,12 @@
 
                                                            <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                {!! Form::label('start_at',trans('admin.start_at')) !!}
-                                                               {!! Form::date('start_at',$products->start_at,['class'=>'form-control datepicker','placeholder'=>trans('admin.start_at')]) !!}
+                                                               {!! Form::text('start_at',$products->start_at,['autocomplete'=>'off','class'=>'form-control datepicker','placeholder'=>trans('admin.start_at')]) !!}
                                                            </div> <!-- /start_at" -->
 
                                                            <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                {!! Form::label('end_at',trans('admin.end_at')) !!}
-                                                               {!! Form::date('end_at',$products->end_at,['class'=>'form-control datepicker','placeholder'=>trans('admin.end_at')]) !!}
+                                                               {!! Form::text('end_at',$products->end_at,['class'=>'form-control datepicker','autocomplete'=>'off','placeholder'=>trans('admin.end_at')]) !!}
                                                            </div> <!-- /end_at" -->
 
                                                            <div class="clearfix"></div>
@@ -55,15 +55,14 @@
 
                                                            <div class="form-group  col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                                {!! Form::label('start_offer_at',trans('admin.start_offer_at')) !!}
-                                                               {!! Form::date('start_offer_at',$products->start_offer_at,['class'=>'form-control datepicker','placeholder'=>trans('admin.start_offer_at')]) !!}
+                                                               {!! Form::text('start_offer_at',$products->start_offer_at,['autocomplete'=>'off','class'=>'form-control datepicker','placeholder'=>trans('admin.start_offer_at')]) !!}
                                                            </div> <!-- /start_offer_at" -->
 
                                                             <div class="form-group  col-lg-4 col-md-4 col-sm-4 col-xs-12">
                                                                {!! Form::label('end_offer_at',trans('admin.end_offer_at')) !!}
-                                                               {!! Form::date('end_offer_at',$products->end_offer_at,['class'=>'form-control datepicker','placeholder'=>trans('admin.end_offer_at')]) !!}
+                                                               {!! Form::text('end_offer_at',$products->end_offer_at,['autocomplete'=>'off','class'=>'form-control datepicker','placeholder'=>trans('admin.end_offer_at')]) !!}
                                                            </div> <!-- /end_offer_at" -->
-
-                                                           <div class="clearfix"></div>
+                                                            <div class="clearfix"></div>
 <div class="col-md-12">
 
     <div class="form-group  ">

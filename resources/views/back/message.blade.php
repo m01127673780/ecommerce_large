@@ -15,6 +15,7 @@
 
         $(".message.success_settings").animate({right: '274px'},3500);
         $(".message.success_settings").stop().delay("2720").animate({right: '-331px'},400);
+    //------------start virgin 2
 
     });
 </script>

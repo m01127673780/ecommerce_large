@@ -42,7 +42,7 @@
                        url:"{{ aurl('load/wight/size') }}",
                        dataType:'html',
                        type:'post',
-                       data:{_token:'{{ csrf_token() }}',dep_id:department},
+                       data:{_token:'{{ csrf_token() }}',dep_id:department,product_id:'{{$products->id}}'},
                        success: function(data)
                        {
                            $('.size_weight').html(data);
