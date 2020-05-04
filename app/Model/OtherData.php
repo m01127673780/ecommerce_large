@@ -1,0 +1,12 @@
+<?php
+namespace App\Model;
+use Illuminate\Database\Eloquent\Model;
+class OtherData extends Model
+{
+    protected $table = 'other_datas';
+    protected $fillable = [
+        'data_value',
+        'data_key',
+        'product_id',
+    ];
+}

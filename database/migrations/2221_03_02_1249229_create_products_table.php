@@ -34,7 +34,7 @@ class CreateProductsTable extends Migration
 
 
             $table->integer('manu_id')->unsigned()->nullable();
-            $table->foreign('manu_id')->references('id')->on('manufacturers')->onDelete('cascade');
+            $table->foreign('manu_id')->references('id')->on('manufacts')->onDelete('cascade');
             /*
                 $table->integer('mall_id')->unsigned()->nullable();
                 $table->foreign('mall_id')->references('id')->on('malls')->onDelete('cascade');
@@ -54,8 +54,7 @@ class CreateProductsTable extends Migration
 
 
             $table->integer('currency_id')->unsigned()->nullable();
-            $table->foreign('currency_id')->references('id')->on('countries');
-
+            $table->foreign('currency_id')->references('id')->on('countreis')->onDelete('cascade');
 
 
             $table->decimal('price', 5, 2)->default(0);

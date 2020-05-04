@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Model\OtherData;
 use App\Model\Product;
 use App\Model\Size;
 use App\Model\Weight;
@@ -181,52 +182,25 @@ class ProductsController extends Controller
                  'price'                    =>'required',
                  'stock'                    =>'required',
          ],[],[
-                 'product_name_ar'          =>trans('admin.product_name_ar'),
-                 'product_name_en'          =>trans('admin.product_name_en'),
-                 'description_ar'           =>trans('admin.description_ar'),
-                 'description_en'           =>trans('admin.description_en'),
-                 'department_id'            =>trans('admin.department_id'),
-                 'add_by_ar'                =>trans('admin.add_by_ar'),
-                 'add_by_en'                =>trans('admin.add_by_en'),
-                 'add_by_photo'             =>trans('admin.add_by_photo'),
-                 'discount'                 =>trans('admin.discount'),
-                  'price_old'                =>trans('admin.price_old'),
-                 'price'                    =>trans('admin.price'),
-                 // ----------
-                 'trade_id'                 =>trans('admin.trade_id'),
-                 'manu_id'                  =>trans('admin.manu_id'),
-                 'flavor_id'                =>trans('admin.flavor_id'),
-                 'flavor'                   =>trans('admin.flavor'),
-                 'color'                    =>trans('admin.color'),
-                 'color_id'                 =>trans('admin.color_id'),
-                 'size_id'                  =>trans('admin.size_id'),
-                 'size'                     =>trans('admin.size'),
-                 'currency_id'              =>trans('admin.currency_id'),
-                 'start_at'                 =>trans('admin.start_at'),
-                 'end_at'                   =>trans('admin.end_at'),
-                 'start_offer_at'           =>trans('admin.start_offer_at'),
-                 'end_offer_at'             =>trans('admin.end_offer_at'),
-                 'price_offer'              =>trans('admin.price_offer'),
-                 'other_data'               =>trans('admin.other_data'),
-                 'weight'                   =>trans('admin.weight'),
-                 'weight_id'                =>trans('admin.weight_id'),
-                 'status'                   =>trans('admin.status'),
-                 'reason'                   =>trans('admin.reason'),
-                 'stock'                    =>trans('admin.stock'),
          ]);
         if(request()->has('input_value') && request()->has('input_key'))
         {
             $i = 0;
             $other_data = '';
+            OtherData::where('product_id',$id)->delete();
             foreach (request('input_key') as $key) {
-                $other_data .= $key . '||' . request('input_value') [$i] . '|';
-                $i++;
+                $data_value = !empty(request('input_value')[$i])?request('input_value')[$i]:'';
+                OtherData::create([
+                    'product_id'                 =>$id,
+                    'data_key'                  =>$key,
+                    'data_value'                =>$data_value,
+                ]);
+                 $i++;
             }
             $data['other_data']=rtrim($other_data,'|');
          }
           Product::where('id',$id)->update($data);
            return response(['status'=>true,'message'=>trans('admin.updated_record')],200);
-
     }
     /**
      * Remove the specified resource from storage.

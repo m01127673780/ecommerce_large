@@ -46,17 +46,18 @@
 <aside class="content_tab_info  tab_product_other_data">
 {{-------------------------------------------------------------------------}}
     <div class='div_content_inputs '>
-        <div class="content_row_add_remove_input row">
-            <div class="col-md-6 " >
+            @foreach($products->other_data()->get() as  $other)
+                <div class="content_row_add_remove_input row">
+                <div class="col-md-6 " >
                 <div class="form-group">
                     {!! Form::label('input_key[]',trans('admin.input_key')) !!}
-                    {!! Form::text('input_key[]','',['class'=>'form-control','class'=>'form-control' ]) !!}
+                    {!! Form::text('input_key[]',$other->data_key,['class'=>'form-control','class'=>'form-control' ]) !!}
                     </div>
                 </div>
             <div class="col-md-6  " >
                 <div class="form-group">
                     {!! Form::label('input_value[]',trans('admin.input_value')) !!}
-                    {!! Form::text('input_value[]','',['class'=>'form-control','class'=>'form-control' ]) !!}
+                    {!! Form::text('input_value[]',$other->data_value,['class'=>'form-control','class'=>'form-control' ]) !!}
                     </div>
                 </div>
             <a class="col-md-12 " >
@@ -66,6 +67,7 @@
                     </a>
                 </a>
             </div>
+        @endforeach
    </div><!--div_content_inputs-->
     <div class='clearfix'>....</div>
     <a class="add_input btn btn-info"> <i class="fa fa-plus"></i></a>
