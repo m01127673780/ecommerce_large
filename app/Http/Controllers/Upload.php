@@ -24,6 +24,20 @@ class Upload extends Controller {
             $file->delete();
         }
     }
+
+
+
+    public function delete_files($product_id)
+    {
+        $files =File::where('file_type','product')->where('relation_id',$product_id)->get();
+         if (count($files) > 0 ) {
+         foreach ($files as $file){
+             $file=File::find($file->id);
+             Storage::delete($file->full_file);
+            $file->delete();
+    }
+  }
+}
     public function upload($data = []) {
 
         if (in_array('new_name', $data)) {

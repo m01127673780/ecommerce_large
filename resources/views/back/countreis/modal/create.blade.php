@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                       <div>  <img   src="{{url('')}}/default/flag.gif" class="img_100px"></div>
-                                     
+
                                 <!----------------End logo-->
                                     {{ Form::button('<i class="fa fa-location-arrow ">'
                                     . trans('admin.create_new_countreis').'

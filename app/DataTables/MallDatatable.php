@@ -102,19 +102,23 @@ class MallDatatable extends DataTable
                 'name'  => 'name_'.session('lang'),
                 'data'  => 'name_'.session('lang'),
                 'title' => trans('admin.name_'.session('lang')),
-            ], [
-                'name'  => 'contact_name',
-                'data'  => 'contact_name',
-                 'title' => trans('admin.contact_name'),
-            ], [
+            ],
+//            [
+//                'name'  => 'contact_name',
+//                'data'  => 'contact_name',
+//                 'title' => trans('admin.contact_name'),
+//            ],
+            [
                 'name'  => 'country_id.country_name_'.session('lang'),
                 'data'  => 'country_id.country_name_'.session('lang'),
                  'title' => trans('admin.country_id'),
-            ],[
-                'name'  => 'mob',
-                'data'  => 'mob',
-                 'title' => trans('admin.mob'),
-            ],[
+            ],
+//            [
+//                'name'  => 'mob',
+//                'data'  => 'mob',
+//                 'title' => trans('admin.mob'),
+//            ],
+            [
                 'name'  => 'image',
                 'data'  => 'image',
                  'title' => trans('admin.logo_mall'),
@@ -122,7 +126,8 @@ class MallDatatable extends DataTable
                 'printable'  => false,
                 'orderable'  => false,
                 'searchable' => false,
-            ], [
+            ],
+            [
                 'name'       => 'edit',
                 'data'       => 'edit',
                 'title'      => trans('admin.edit'),
@@ -138,15 +143,17 @@ class MallDatatable extends DataTable
                 'printable'  => false,
                 'orderable'  => false,
                 'searchable' => false,
-            ],[
-                'name'       => 'show',
-                'data'       => 'show',
-                'title'      => trans('admin.show'),
-                'exportable' => false,
-                'printable'  => false,
-                'orderable'  => false,
-                'searchable' => false,
-            ],[
+            ],
+//            [
+//                'name'       => 'show',
+//                'data'       => 'show',
+//                'title'      => trans('admin.show'),
+//                'exportable' => false,
+//                'printable'  => false,
+//                'orderable'  => false,
+//                'searchable' => false,
+//            ],
+            [
                 'name'  => 'created_at',
                 'data'  => 'created_at',
                 'title' => trans('admin.created_at'),

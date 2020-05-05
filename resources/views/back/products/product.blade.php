@@ -12,7 +12,8 @@
         // In your Javascript (external .js resource or  tag)
         <script>
             $(document).ready(function() {
-                $('.select2').select2();
+
+
                 //------------------start save And continue
                 $(document).on('click','.save_and_continue',function(){
                     var form_data = $('#product_form').serialize();
@@ -83,27 +84,8 @@
                                         <!--container-->
                                         <div class="col-md-12" >
                                             <h4>{{$title}}</h4> <br>
-                                            <aside class="  content_buttons_save_continue_copy ">
-                                                <a class="btn btn-primary save" href="">{{ trans('admin.save') }} <i class="fa fa-save "></i></a>
-                                                <a class="btn btn-info save_continue save_and_continue" href="">{{ trans('admin.save_continue') }} <i class="fa fa-save "></i> <i class="fa fa-spinner fa-spin hidden loading_save_c "> </i></a>
-                                                <a class="btn btn-success copy_products" href="">   {{ trans('admin.copy_products') }} <i class="fa fa-window-restore"></i></a>
-                                                <a class="btn btn-danger delete" href="">        {{ trans('admin.delete') }}      <i class="fa fa-trash"></i></a>
-                                                <hr>
-                                                <div class="erorr_message hidden btn btn-danger message_error  text-left message content_alert_eroor pos_r" >
-                                                    <img class="w_28px_h_28px_custom  "src="{{url('default')}}/sad7.png"   >
-                                                    {{--                                                       <div class="w_28px_h_28px_custom button_close_alert_eroor btn-danger  "   > <i class="fa fa-times"></i> </div>--}}
-                                                    <ol  class="validate_message">
+                                            <aside class="content_buttons_save_continue_copy ">@include('back.products.btn.buttons_save_continue_copy')</aside><br> <br>
 
-                                                    </ol><!--validate_message-->
-                                                </div><!--erorr_message-->
-                                                {{--                                               <div class="alert btn-success hidden  alert_success success_message message "> --}}
-                                                {{--                                                   <img class="w_22px_h_22px "src="{{url('default')}}/like7.png" >--}}
-                                                {{--                                                   .... <img class="w_25px_h_25px m_b_6px"src="{{url('default')}}/clap.png" >--}}
-                                                {{--                                               </div>--}}
-                                                <div  class="alert btn-success hidden    success_message"  ></div>
-                                                <hr>
-
-                                            </aside>  <!--content_buttons_save_continue_copy-->
                                             <div class="container_contect_tabs">
                                                 <!-- Nav tabs -->
                                                 <ul class="nav nav-tabs" role="tablist">
@@ -195,7 +177,36 @@
 
 
 
+ 
 
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="del_products{{$products->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{trans('admin.delete')}}</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                {!! Form::open(['route'=>['products.destroy',$products->id],'method'=>'delete']) !!}
+                                                <div class="modal-body">
+                                                    <p> {{trans('admin.delete_this',['name'=>session('lang')== 'ar'?$products->product_name_ar:$products->product_name_en])}}</p>
+                                                    @if(empty($products->photo))
+                                                        <img src="{{url('')}}/default/product.png" class="img_120px">
+                                                    @endif
+                                                    @if(!empty($products->photo))
+                                                        <div> <img src="{{url('public/storage').Storage::url($products->photo)}}" class="img_100px  "></div>
+                                                    @endif
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">{{trans('admin.close')}}</button>
+                                                    {!! Form::submit(trans('admin.yes'),['class'=>'btn btn-primary']) !!}
+                                                    {!! Form::close() !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 

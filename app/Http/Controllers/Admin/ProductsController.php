@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Model\MallProduct;
 use App\Model\OtherData;
 use App\Model\Product;
 use App\Model\Size;
@@ -183,7 +184,17 @@ class ProductsController extends Controller
                  'stock'                    =>'required',
          ],[],[
          ]);
-        if(request()->has('input_value') && request()->has('input_key'))
+        if(request()->has('mall'))
+        {
+            MallProduct::where('product_id',$id)->delete();
+          foreach (request('mall') as $mall){
+              MallProduct::create([
+                  'product_id'=>$id,
+                  'mall_id'=>$mall,
+              ]);
+          }
+        }//end mall
+            if(request()->has('input_value') && request()->has('input_key'))
         {
             $i = 0;
             $other_data = '';
@@ -208,8 +219,20 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function deleteProduct($id)
+    {
+          $products =  Product::find($id);
+         Storage::delete($products->photo);
+         up()->delete_files($id);
+         $products->delete();
+
+
+        session()->flash('success', trans('admin.deleted_record') );
+        return redirect('admin/products');
+    }
     public function destroy($id)
     {
+        $this->deleteProduct($id);
           $products =  Product::find($id);
          Storage::delete($products->photo);
          $products->delete();
@@ -223,15 +246,14 @@ class ProductsController extends Controller
             // Product::destroy(request('item'));
             foreach (request('item') as $id)
             {
-                $products =  Product::find($id);
-                Storage::delete($products->photo);
-                $products->delete();
+                $this->deleteProduct($id);
+
             }
 
         }/*if*/ else{
-               $products =  Product::find(request('item'));
-                Storage::delete($products->photo);
-                $products->delete();
+
+            $this->deleteProduct(request('item'));
+
         }
         session()->flash('success', trans('admin.deleted_record') );
         return redirect('admin/products');

@@ -44,11 +44,15 @@ class Product extends Model
 
     ];
 
+
     public function other_data(){
 
         return $this->hasMany('App\Model\OtherData','product_id','id');
     }
+    public function malls(){
 
+        return $this->hasMany('App\Model\MallProduct','product_id','id');
+    }
     public function files()
     {
         return $this->hasMany('App\File','relation_id','id')->where('file_type','product');

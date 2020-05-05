@@ -63,7 +63,7 @@ class CountreisController extends Controller
             'mob'                     =>'required',
             'currency'                =>'required',
             'code'                    =>'required',
-            'logo'                    =>v_image(),
+            'logo'                    =>'sometimes|nullable|'.v_image(),
 
          ],[
             'country_name_ar'         =>trans('admin.country_name_ar'),
@@ -96,7 +96,7 @@ class CountreisController extends Controller
             'mob'                     =>'required',
             'currency'                =>'required',
             'code'                    =>'required',
-            'logo'                    =>'sometimes|nullable|'.v_image()
+            'logo'                    =>'sometimes|nullable|'.v_image(),
 
          ],[
             'country_name_ar'         =>trans('admin.country_name_ar'),
