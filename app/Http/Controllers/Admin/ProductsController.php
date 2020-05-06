@@ -5,11 +5,13 @@ use App\Model\MallProduct;
 use App\Model\OtherData;
 use App\Model\Product;
 use App\Model\Size;
+use App\File as FileTbl;
 use App\Model\Weight;
 use App\DataTables\ProductsDatatable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Storage;
+use File;
 class ProductsController extends Controller
 {
     /**
@@ -220,51 +222,46 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response */
          // ------------------ start  copy_product
     public function copy_product($id){
-    
                 if(request()->ajax()){
-        $copy   = Product::find($id);
-        $create = Product::create([
-                 'product_name_ar'          =>$copy->product_name_ar,
-                 'product_name_en'          =>$copy->product_name_en,
-                 'description_ar'           =>$copy->description_ar,
-                 'description_en'           =>$copy->description_en,
-                 'department_id'            =>$copy->department_id,
-                 'add_by_ar'                =>$copy->add_by_ar,
-                 'add_by_en'                =>$copy->add_by_en,
-                 'discount'                 =>$copy->discount,
-                 'price_offer'              =>$copy->price_offer,
-                 'price_old'                =>$copy->price_old,
-                 'add_by_photo'             =>$copy->add_by_photo,
-                 'trade_id'                 =>$copy->trade_id,
-                 'manu_id'                  =>$copy->manu_id,
-                 'flavor_id'                =>$copy->flavor_id,
-                 'flavor'                   =>$copy->flavor,
-                 'color'                    =>$copy->color,
-                 'color_id'                 =>$copy->color_id,
-                 'size_id'                  =>$copy->size_id,
-                 'size'                     =>$copy->size,
-                 'currency_id'              =>$copy->currency_id,
-                 'start_at'                 =>$copy->start_at,
-                 'end_at'                   =>$copy->end_at,
-                 'start_offer_at'           =>$copy->start_offer_at,
-                 'end_offer_at'             =>$copy->end_offer_at,
-                  'other_data'               =>$copy->other_data,
-                 'weight'                   =>$copy->weight,
-                 'weight_id'                =>$copy->weight_id,
-                 'status'                   =>$copy->status,
-                 'reason'                   =>$copy->reason,
-                 'price'                    =>$copy->price,
-                 'stock'                    =>$copy->stock,
-
-        ]);//create
-    return response([
+                   $copy   = Product::find($id)->toArray();
+                    unset($copy['id']);
+                    $create = Product::create($copy);
+                    if(!empty($copy['photo']))
+                    {
+                        $ext = File::extension($copy['photo']);
+                        $new_path = 'products/' . $create->id . '/main_image/' .str_random(30).'.'. $ext;
+                        Storage::copy($copy['photo'], $new_path);
+                        $create->photo = $new_path;
+                        $create->save();
+                        $files = FileTbl::where('file_type','product')->where('relation_id',$id)->get();
+                        if (count($files)>0)
+                        {
+                            foreach ($files as $file)
+                            {
+                                $ext = File::extension($file->full_file);
+                                $hashname = str_random(30);
+                                $new_path = 'products/'.$create->id .'/' .$hashname.'.'. $ext;
+                                Storage::copy($file->full_file, $new_path);
+                                $add =  FileTbl::create([
+                                    'name'			=>  $file->name,
+                                    'size'			=>	$file->size,
+                                    'file'			=>	$hashname,
+                                    'path'			=>	'products/'.$create->id,
+                                    'full_file'   	=>	'products/'.$create->id.'/'.$hashname.'.'. $ext,
+                                    'mime_type'		=>  $file->mime_type,
+                                    'file_type'		=>  'product',
+                                    'relation_id' 	=>  $create->id,
+                                ]);
+                            }
+                        }
+                    }
+                    return response([
                     'status'=>true,
                     'message'=>trans('admin.product_created'),
                     'id'=>$create->id],200
                 );
     } /* request()->ajax*/else{
                 return redirect('admin/products');
-
     }
     }
     // ------------------ End copy_product
