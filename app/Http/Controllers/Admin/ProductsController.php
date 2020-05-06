@@ -217,16 +217,64 @@ class ProductsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+     * @return \Illuminate\Http\Response */
+         // ------------------ start  copy_product
+    public function copy_product($id){
+    
+                if(request()->ajax()){
+        $copy   = Product::find($id);
+        $create = Product::create([
+                 'product_name_ar'          =>$copy->product_name_ar,
+                 'product_name_en'          =>$copy->product_name_en,
+                 'description_ar'           =>$copy->description_ar,
+                 'description_en'           =>$copy->description_en,
+                 'department_id'            =>$copy->department_id,
+                 'add_by_ar'                =>$copy->add_by_ar,
+                 'add_by_en'                =>$copy->add_by_en,
+                 'discount'                 =>$copy->discount,
+                 'price_offer'              =>$copy->price_offer,
+                 'price_old'                =>$copy->price_old,
+                 'add_by_photo'             =>$copy->add_by_photo,
+                 'trade_id'                 =>$copy->trade_id,
+                 'manu_id'                  =>$copy->manu_id,
+                 'flavor_id'                =>$copy->flavor_id,
+                 'flavor'                   =>$copy->flavor,
+                 'color'                    =>$copy->color,
+                 'color_id'                 =>$copy->color_id,
+                 'size_id'                  =>$copy->size_id,
+                 'size'                     =>$copy->size,
+                 'currency_id'              =>$copy->currency_id,
+                 'start_at'                 =>$copy->start_at,
+                 'end_at'                   =>$copy->end_at,
+                 'start_offer_at'           =>$copy->start_offer_at,
+                 'end_offer_at'             =>$copy->end_offer_at,
+                  'other_data'               =>$copy->other_data,
+                 'weight'                   =>$copy->weight,
+                 'weight_id'                =>$copy->weight_id,
+                 'status'                   =>$copy->status,
+                 'reason'                   =>$copy->reason,
+                 'price'                    =>$copy->price,
+                 'stock'                    =>$copy->stock,
+
+        ]);//create
+    return response([
+                    'status'=>true,
+                    'message'=>trans('admin.product_created'),
+                    'id'=>$create->id],200
+                );
+    } /* request()->ajax*/else{
+                return redirect('admin/products');
+
+    }
+    }
+    // ------------------ End copy_product
+
     public function deleteProduct($id)
     {
           $products =  Product::find($id);
          Storage::delete($products->photo);
          up()->delete_files($id);
          $products->delete();
-
-
         session()->flash('success', trans('admin.deleted_record') );
         return redirect('admin/products');
     }
@@ -247,9 +295,7 @@ class ProductsController extends Controller
             foreach (request('item') as $id)
             {
                 $this->deleteProduct($id);
-
             }
-
         }/*if*/ else{
 
             $this->deleteProduct(request('item'));

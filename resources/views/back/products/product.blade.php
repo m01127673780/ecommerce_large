@@ -14,7 +14,45 @@
             $(document).ready(function() {
 
 
-                //------------------start save And continue
+                //------------------start copy product
+                $(document).on('click','.copy_product',function(){
+                    $.ajax({
+                        url:'{{aurl('products/copy/'.$products->id)}}',
+                        dataType:'json',
+                        type:'post',
+                        data:{_token:'{{ csrf_token() }}'},
+                        beforeSend:function () {
+                            $('.loading_copy').removeClass('hidden');
+                            $('.validate_message').html('');
+                            $('.erorr_message').addClass('hidden');
+                            $('.success_message').addClass('hidden');
+
+                        },success:function (data) {
+                            if(data.status == true)
+                            {
+                                $('.loading_copy').addClass('hidden');
+                                $('.success_message').html('<div>'+data.message+'</div>').removeClass('hidden');
+                                   setTimeout(function(){
+                                    window.location.href='{{aurl('products/')}}/'+data.id+'/edit';
+
+                                },5000);
+                            }
+                        },error(response){
+                            $('.loading_copy').addClass('hidden');
+                            var error_li ='';
+                            $.each(response.responseJSON.errors,function(index,value){
+                                error_li +='  <li class=""> <img class="w_18px_h_18px "src="{{url('default')}}/d_like6.png" > '+value+'</li>';
+                            });
+                            $('.validate_message').html(error_li);
+                            $('.erorr_message').removeClass('hidden');
+                        }
+                    }); //ajax
+                    return false;
+                });//document on  copy_products
+                //------------------End   copy product
+
+
+                //------------------start   save And continue
                 $(document).on('click','.save_and_continue',function(){
                     var form_data = $('#product_form').serialize();
                     $.ajax({
@@ -46,7 +84,7 @@
                     }); //ajax
                     return false;
                 });//document on  save_and_continue
-                //------------------End   save And continue
+                //------------------End    save And continue
             });//document ready
         </script>
 

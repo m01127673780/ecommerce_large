@@ -364,6 +364,7 @@ return [
     'product_malls_trademarks_title'                         =>'المولات و العلامات  التجاريه ',
     'input_key'                         =>'عنوان الحقل  ',
     'input_value'                         =>'محتوى الحقل  ',
+    'product_created'                         =>'تم نسخ المنتج بنجاح    سيتم تحويلك الى  صفحه المنتج الجديد بعد 5 ثوانى  :)   ',
 
 
 //puplic lang

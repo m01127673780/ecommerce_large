@@ -24,26 +24,21 @@ class Upload extends Controller {
             $file->delete();
         }
     }
-
-
-
     public function delete_files($product_id)
     {
         $files =File::where('file_type','product')->where('relation_id',$product_id)->get();
          if (count($files) > 0 ) {
          foreach ($files as $file){
-             $file=File::find($file->id);
-             Storage::delete($file->full_file);
-            $file->delete();
-    }
+             $this->delete($file->id);
+             Storage::deleteDirectory($file->path);
+
+         }
   }
 }
     public function upload($data = []) {
-
         if (in_array('new_name', $data)) {
             $new_name = $data['new_name'] === null?time():$data['new_name'];
         }
-
         if (request()->hasFile($data['file']) && $data['upload_type'] == 'single') {
             Storage::has($data['delete_file'])?Storage::delete($data['delete_file']):'';
             return request()->file($data['file'])->store($data['path']);
