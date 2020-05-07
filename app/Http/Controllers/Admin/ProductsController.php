@@ -223,6 +223,7 @@ class ProductsController extends Controller
          // ------------------ start  copy_product
     public function copy_product($id){
                 if(request()->ajax()){
+                   $relation_data   = Product::find($id);
                    $copy   = Product::find($id)->toArray();
                     unset($copy['id']);
                     $create = Product::create($copy);
@@ -233,10 +234,28 @@ class ProductsController extends Controller
                         Storage::copy($copy['photo'], $new_path);
                         $create->photo = $new_path;
                         $create->save();
-                        $files = FileTbl::where('file_type','product')->where('relation_id',$id)->get();
-                        if (count($files)>0)
-                        {
-                            foreach ($files as $file)
+
+// --------------------------- start mall product copy
+                              foreach ( $relation_data->mall_product()->get() as $mall) {
+                                 MallProduct::create([
+                                'product_id'=>$create->id,
+                                'mall_id'=>$mall->mall_id,
+                            ]);
+                        }
+// ---------------------------End mall product  copy key val
+                            foreach ( $relation_data->other_data()->get() as $other_data) {
+                                 OtherData::create([
+                                    'product_id'                 =>$create->id,
+                                    'data_key'                  =>$other_data->data_key,
+                                    'data_value'                =>$other_data->data_value,
+                                ]);
+                                }
+// --------------------------- start mall product other data key val
+
+
+// ---------------------------End mall product  other data
+
+                       foreach ($relation_data->files()->get() as $file)
                             {
                                 $ext = File::extension($file->full_file);
                                 $hashname = str_random(30);
@@ -254,7 +273,7 @@ class ProductsController extends Controller
                                 ]);
                             }
                         }
-                    }
+
                     return response([
                     'status'=>true,
                     'message'=>trans('admin.product_created'),

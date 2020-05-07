@@ -17,7 +17,7 @@
                         <!-- /.----------------------------------------------------------------- -->
                         <div class="box-body">
                             {!! Form::open(['url'=>aurl('flavors/create_quick'),'files'=>true]) !!}
-                            <section class="form_modal_create">@include('back.flavors.form.create')</section>
+                            <section class="form_modal_create">@include('back.sizes.form.create')</section>
                             {!! Form::close() !!}
                         </div><!-- box-body-->
                         <!-- /.----------------------------------------------------------------- -->

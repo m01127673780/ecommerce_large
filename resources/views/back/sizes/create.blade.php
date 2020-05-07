@@ -62,7 +62,7 @@
                                     {!! Form::open(['url'=>aurl('sizes'),'files'=>true]) !!}
 
                                     {{--start form --}}
-                                    <section class="form_page_create">@include('back.flavors.form.create')</section>
+                                    <section class="form_page_create">@include('back.sizes.form.create')</section>
 
                                     {{--End form --}}
                                     {!! Form::close() !!}

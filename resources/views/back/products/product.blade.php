@@ -170,6 +170,10 @@
                                                         <a class="nav-link" data-toggle="tab" href="#product_other_data">{{ trans('admin.product_other_data') }}
                                                             <i class="fas fa-folder-plus"></i>  </a>
                                                     </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#product_related">{{ trans('admin.product_related') }}
+                                                            <i class="fab fa-creative-commons-share"></i>  </a>
+                                                    </li>
                                                 </ul>
                                                 <!-- Tab content start  -->
                                                 <div class="tab-content">
@@ -183,6 +187,7 @@
                                                     @include('back.products.tabs.product_colors_flavors')
                                                     @include('back.products.tabs.product_malls_trademarks')
                                                     @include('back.products.tabs.product_other_data')
+                                                    @include('back.products.tabs.product_related')
 
                                                 </div> <!-- Tab content start  -->
                                             </div><br>

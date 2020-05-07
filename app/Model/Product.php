@@ -45,6 +45,11 @@ class Product extends Model
     ];
 
 
+    public function mall_product(){
+
+        return $this->hasMany('App\Model\MallProduct','product_id','id');
+    }
+
     public function other_data(){
 
         return $this->hasMany('App\Model\OtherData','product_id','id');

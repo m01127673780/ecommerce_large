@@ -58,7 +58,7 @@
                                     @endforeach
                                 ];
                                 $('.select2_malls').select2({data:dataSelect});
-                                $('.select2').select2();
+                                // $('.select2').select2();
 
                             });
                         </script>
@@ -78,7 +78,7 @@
             <div class="form-group col-md-12">
                 <label form="manu_id"  >{{trans('admin.manufacts')}}</label>
                 <div class="" >
-                    {!! Form::select('manu_id',App\Model\Manufact::pluck('name_'.lang(),'id'),$products->mall_id,['class'=>'select2 form-control','placeholder'=>trans('admin.manufacts')])!!}
+                    {!! Form::select('manu_id',App\Model\Manufact::pluck('name_'.lang(),'id'),$products->manu_id,['class'=>'select2 form-control','placeholder'=>trans('admin.manufacts')])!!}
                 </div>
             </div><!--form-group-->
 

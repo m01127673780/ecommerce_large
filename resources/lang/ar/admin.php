@@ -277,20 +277,21 @@ return [
     'create_color'          => ' اضافه لون ',
     'create_new_color'      => 'اضافه   لون جديد',
  // start weight
-    'weight'                 =>' المقاسات   ',
-    'weights'                 =>' المقاسات   ',
-    'icon_weight'            =>' 	  رمز  المقاس ',
-    'page_create_weight'     => ' صفحه اضافه مقاس  ',
-    'create_weight'          => ' اضافه مقاس ',
-    'create_new_weight'      => 'اضافه   مقاس جديد',
- // start size
-     'sizes'                 =>' الاحجام   ',
-    'icon_size'            =>' 	  رمز  الحجم ',
-    'page_create_size'     => ' صفحه اضافه حجم  ',
-    'create_size'          => ' اضافه حجم ',
-    'create_new_size'      => 'اضافه   حجم جديد',
+    'weight'                 =>' الاحجام   ',
+    'weights'                 =>' الاحجام   ',
+    'icon_weight'            =>' 	رمز  الحجم ',
+    'page_create_weight'     => ' صفحه اضافه حجم  ',
+    'create_weight'          => ' اضافه حجم ',
+    'create_new_weight'      => 'اضافه   حجم جديد',
+    // start sizes
+    'sizes'                 =>' المقاسات   ',
+     'icon_sizes'            =>' 	  رمز  المقاس ',
+    'page_create_sizes'     => ' صفحه اضافه مقاس  ',
+    'create_sizes'          => ' اضافه مقاس ',
+    'create_new_sizes'      => 'اضافه   مقاس جديد',
     'is_public'      => ' مقاس عام      ',
- // start flavors
+
+    // start flavors
      'flavors'                 =>' النكهات   ',
     'icon_flavor'            =>' 	  رمز  النكهه ',
     'page_create_flavor'     => ' صفحه اضافه  نكهه  ',
@@ -364,8 +365,10 @@ return [
     'product_malls_trademarks_title'                         =>'المولات و العلامات  التجاريه ',
     'input_key'                         =>'عنوان الحقل  ',
     'input_value'                         =>'محتوى الحقل  ',
-    'product_created'                         =>'تم نسخ المنتج بنجاح    سيتم تحويلك الى  صفحه المنتج الجديد بعد 5 ثوانى  :)   ',
+    'product_created'                         =>'تم نسخ المنتج بنجاح     سيتم تحويلك الان  الى  صفحه المنتج الجديد بعد 5 ثوانى      ',
+
     'product_home'                         =>'الرئيسيه للمنتجات   ',
+    'product_related'                         =>'المنتجات  المشابهه و ذات الصله    ',
 
 
 //puplic lang
