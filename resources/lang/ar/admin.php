@@ -370,7 +370,6 @@ return [
     'product_home'                         =>'الرئيسيه للمنتجات   ',
     'product_related'                         =>'المنتجات  المشابهه و ذات الصله    ',
 
-
 //puplic lang
     'and'      => '  و       ',
     'select_dep'      => ' حداد القسم      ',

@@ -284,6 +284,21 @@ class ProductsController extends Controller
     }
     }
     // ------------------ End copy_product
+    // ------------------ start  product_search
+    public function product_search(){
+        if(request()->ajax()) {
+            if(!empty(request('search')) && request()->has('search')){
+                $products_search = Product::where('product_name_'.session('lang'),'LIKE','%'.request('search').'%')->limit(50)->get();
+                return response([
+                    'status'=>true,
+                    'result'=> count($products_search)>0?$products_search:'',
+                    'count'=> count($products_search)
+                    ],200);
+
+            }
+          }//ajax
+        }//product_search
+    // ------------------ End    product_search
 
     public function deleteProduct($id)
     {
