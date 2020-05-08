@@ -5,6 +5,7 @@ use App\Model\MallProduct;
 use App\Model\OtherData;
 use App\Model\Product;
 use App\Model\Size;
+use App\Model\RelatedProduct;
 use App\File as FileTbl;
 use App\Model\Weight;
 use App\DataTables\ProductsDatatable;
@@ -186,16 +187,37 @@ class ProductsController extends Controller
                  'stock'                    =>'required',
          ],[],[
          ]);
+ //  ------------------------
+
         if(request()->has('mall'))
         {
             MallProduct::where('product_id',$id)->delete();
-          foreach (request('mall') as $mall){
-              MallProduct::create([
-                  'product_id'=>$id,
-                  'mall_id'=>$mall,
-              ]);
-          }
+          foreach (request('mall') as $mall)
+                         {
+                                  MallProduct::create([
+                                      'product_id'=>$id,
+                                      'mall_id'=>$mall,
+                                  ]);
+                        }//foreach mall
+
         }//end mall
+//  ------------------------
+//  ------------------------
+
+        if(request()->has('related'))
+        {
+            RelatedProduct::where('product_id',$id)->delete();
+            foreach (request('related') as $related)
+            {
+                RelatedProduct::create([
+                    'product_id'=>$id,
+                    'related_product'=>$related,
+                ]);
+            }//foreach mall
+
+        }//end related
+//  ------------------------
+
             if(request()->has('input_value') && request()->has('input_key'))
         {
             $i = 0;
@@ -288,7 +310,11 @@ class ProductsController extends Controller
     public function product_search(){
         if(request()->ajax()) {
             if(!empty(request('search')) && request()->has('search')){
-                $products_search = Product::where('product_name_'.session('lang'),'LIKE','%'.request('search').'%')->limit(50)->get();
+                $products_search = Product::where('product_name_'.session('lang'),'LIKE','%'.request('search').'%')
+                    ->where('id','!=',request('id'))
+                    ->limit(200)
+                    ->orderBy('id','desc')
+                    ->get();
                 return response([
                     'status'=>true,
                     'result'=> count($products_search)>0?$products_search:'',

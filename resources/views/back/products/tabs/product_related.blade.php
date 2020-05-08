@@ -8,7 +8,7 @@
                     url:'{{ aurl('products/search') }}',
                     dataType:'json',
                     type:'post',
-                    data:{_token:'{{ csrf_token() }}',search:search},
+                    data:{_token:'{{ csrf_token() }}',search:search,id:'{{$products->id}}'},
                     beforeSend:function () {
                         $('.loading_data').removeClass('hidden');
                     },success:function (data) {
@@ -16,9 +16,9 @@
                             if(data.count > 0 ){
                                 var itmes = '';
                                 $.each(data.result,function (index,value) {
-                                    if(value.id!= {{$products->id}}){
-                                    itmes += '<li>'+value.{{'product_name_'.session('lang')}}+'</li>';
-                                }
+
+                                    itmes += '<li> <label> <input type="checkbox" name="related[]" value="'+value.id+'"/>' +value . {{'product_name_'.session('lang')}} + ' </label> </li>';
+
                                 });
                                 $('.itmes').html(itmes);
                         }

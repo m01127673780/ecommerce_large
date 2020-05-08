@@ -41,10 +41,13 @@ class Product extends Model
         'weight_id',
         'status',
         'reason',
-
     ];
 
+    public function related()
+    {
 
+        return $this->hasMany('App\Model\RelatedProduct','product_id','id');
+    }
     public function mall_product(){
 
         return $this->hasMany('App\Model\MallProduct','product_id','id');
